@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "986902824039",
+    "firebase_url": "https://pickatoast-99ff0.firebaseio.com",
+    "project_id": "pickatoast-99ff0",
+    "storage_bucket": "pickatoast-99ff0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986902824039:android:c24e00ceff95d8f9d100c2",
+        "android_client_info": {
+          "package_name": "com.example.pickatoast.pickatoast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986902824039-1hbbtke6lupnerf8ltvv56l1f3hv55jr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pickatoast.pickatoast",
+            "certificate_hash": "a306e9bdd107a8e73bfe097b9c25794f69100f9d"
+          }
+        },
+        {
+          "client_id": "986902824039-a2fb79jf8r5gcrrqdj9jlmb40o1movft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv45rGNdG8oDmQ4fMyRki0b2JNYg87Bwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986902824039-a2fb79jf8r5gcrrqdj9jlmb40o1movft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
