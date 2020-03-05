@@ -13,4 +13,11 @@ public class MainActivity extends AppCompatActivity {
         System.out.println( "Hola" );
         System.out.println( "Hola" ); System.out.println( "Hola" );
     }
+    public void aaaaa(){
+        System.out.println("tu mama come perro");
+
+            System.out.println("tu mama");
+
+
+    }
 }
