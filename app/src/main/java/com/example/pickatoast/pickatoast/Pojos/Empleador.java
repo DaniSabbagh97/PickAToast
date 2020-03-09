@@ -1,33 +1,22 @@
 package com.example.pickatoast.pickatoast.Pojos;
 
-public class Empleado {
-    private String nombre;
+public class Empleador {
 
+    private String nombre;
     private String correo;
     private String localidad;
-    private String estado;
     private String puntuacion;
-    private String imagen;
     private String tipo;
-    private String oficio;
+    private String imagen;
 
-    public Empleado(String nombre, String correo, String localidad, String estado, String puntuacion, String imagen, String oficio) {
+    public Empleador(String nombre, String correo, String localidad, String puntuacion, String tipo, String imagen) {
         this.nombre = nombre;
         this.correo = correo;
         this.localidad = localidad;
-        this.estado = estado;
         this.puntuacion = puntuacion;
+        this.tipo = tipo;
         this.imagen = imagen;
-        this.oficio= oficio;
     }
-
-    public Empleado() {
-    }
-
-
-
-    //<---------Getters y Setters-------->
-
 
     public String getNombre() {
         return nombre;
@@ -53,28 +42,12 @@ public class Empleado {
         this.localidad = localidad;
     }
 
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
     public String getPuntuacion() {
         return puntuacion;
     }
 
     public void setPuntuacion(String puntuacion) {
         this.puntuacion = puntuacion;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
     }
 
     public String getTipo() {
@@ -85,14 +58,11 @@ public class Empleado {
         this.tipo = tipo;
     }
 
-    public String getOficio() {
-        return oficio;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setOficio(String oficio) {
-        this.oficio = oficio;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }
-
-
-
