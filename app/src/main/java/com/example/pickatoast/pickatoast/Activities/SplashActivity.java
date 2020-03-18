@@ -39,7 +39,7 @@ public class SplashActivity extends AppCompatActivity  {
 
     public void logoAnimation(){
         XmlAnimationService xmlAnimationService = new XmlAnimationService(context);
-        int[] animationArray ={R.anim.toast_splash,R.anim.toast_splash2};
+        int[] animationArray ={R.anim.toast_splash,R.anim.toast_splash2,R.anim.toast_splash,R.anim.toast_splash2};
         xmlAnimationService.runAnimationArrayInOrder(logo,animationArray);
     }
 
