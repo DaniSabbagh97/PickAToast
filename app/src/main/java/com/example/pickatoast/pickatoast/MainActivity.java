@@ -11,13 +11,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
         System.out.println( "Hola" );
-        System.out.println( "Hola" );
-        System.out.println( "Hola" );
+        System.out.println( "Hola" ); System.out.println( "Hola" );
     }
-
-    public void kjasdfh(){
-        System.out.println("tu mama come perro");
-        System.out.println("tu mama");
-    }
-
 }
