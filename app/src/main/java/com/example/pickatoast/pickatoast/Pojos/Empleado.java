@@ -25,7 +25,6 @@ public class Empleado {
     }
 
 
-
     //<---------Getters y Setters-------->
 
 
