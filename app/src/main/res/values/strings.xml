@@ -5,4 +5,5 @@
     <string name="et_contraseña">Introduce tu contraseña</string>
     <string name="et_verificar_correo">Introduce de nuevo tu contraseña</string>
     <string name="et_nombre">Introduce el nombre</string>
+
 </resources>
