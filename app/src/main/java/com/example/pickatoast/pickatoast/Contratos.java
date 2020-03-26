@@ -40,11 +40,14 @@ public class Contratos extends AppCompatActivity {
     FirebaseUser user;
 
     String uid;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contratos);
+
+        //email=getIntent().getExtras().getString("CLAVE CORREO");
 
         todosContratos= new ArrayList<>();
         datos=new ArrayList<>();

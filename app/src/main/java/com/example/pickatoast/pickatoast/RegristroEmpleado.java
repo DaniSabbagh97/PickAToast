@@ -72,9 +72,7 @@ public class RegristroEmpleado extends AppCompatActivity {
 
                 if(email.isEmpty()) {
                     Toast.makeText( RegristroEmpleado.this, "Debe introducirse el email y la password", Toast.LENGTH_SHORT ).show();
-                } else if (nombre.isEmpty()) {
-                    Toast.makeText( RegristroEmpleado.this, "Debe introducir el Nombre", Toast.LENGTH_SHORT ).show();
-                } else if (password.length() < 6) {
+                }else if (password.length() < 6) {
                     Toast.makeText( RegristroEmpleado.this, "La password debe contener al menos 6 caracteres", Toast.LENGTH_SHORT ).show();
                 } else if (!password.equals( password2 )) {
                     Toast.makeText( RegristroEmpleado.this, "Las contraseñas deben de coincidir", Toast.LENGTH_SHORT ).show();
@@ -101,7 +99,8 @@ public class RegristroEmpleado extends AppCompatActivity {
                                     progressDialog.dismiss();
                                 }
                             });
-                    Intent intent=new Intent(RegristroEmpleado.this, Contratos.class);
+                    Intent intent=new Intent(RegristroEmpleado.this, RegistroEmpleado2.class);
+                    intent.putExtra("CLAVE CORREO", email);
                     startActivity(intent);
 
                 }

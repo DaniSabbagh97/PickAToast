@@ -18,22 +18,7 @@
         android:text="@string/btn_registro_uno" />
 
     <EditText
-        android:id="@+id/etContraseña"
-        android:layout_width="296dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="362dp"
-        android:background="@drawable/texto_redondo"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/et_nombre"
-        android:textColor="@color/color_textview_font"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/etContraseña2"
+        android:id="@+id/etLocalidadRegistro"
         android:layout_width="296dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"
@@ -48,7 +33,22 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/etContraseña3"
+        android:id="@+id/etNombreEmpleado"
+        android:layout_width="296dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="374dp"
+        android:background="@drawable/texto_redondo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/et_nombre"
+        android:textColor="@color/color_textview_font"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etOficioRegistro"
         android:layout_width="296dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"
@@ -68,8 +68,8 @@
         android:layout_height="78dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="581dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="577dp"
         android:gravity="center"
         android:text="@string/tv_paso_dos"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
