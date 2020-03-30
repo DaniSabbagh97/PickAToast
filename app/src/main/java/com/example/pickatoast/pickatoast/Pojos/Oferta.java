@@ -5,13 +5,15 @@ import android.os.Parcelable;
 
 public class Oferta implements Parcelable {
 
+    String id;
     String nombreOferta;
     String restauranteOferta;
     String localizacionOferta;
     String duracionContrato;
     String linkImagen;
 
-    public Oferta(String nombreOferta, String restauranteOferta, String localizacionOferta, String duraciónContrato, String linkImagen) {
+    public Oferta(String id,String nombreOferta, String restauranteOferta, String localizacionOferta, String duraciónContrato, String linkImagen) {
+        this.id=id;
         this.nombreOferta = nombreOferta;
         this.restauranteOferta = restauranteOferta;
         this.localizacionOferta = localizacionOferta;
@@ -37,6 +39,8 @@ public class Oferta implements Parcelable {
         @Override
         public Oferta[] newArray(int size) {return new Oferta[size];}
     };
+
+    public String getId() { return id;}
 
     public String getNombreOferta() {
         return nombreOferta;

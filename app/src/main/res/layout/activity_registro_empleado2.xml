@@ -4,67 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegristroEmpleado">
-
-    <EditText
-        android:id="@+id/etContraseña"
-        android:layout_width="296dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="336dp"
-        android:background="@drawable/texto_redondo"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/et_contraseña"
-        android:inputType="textPassword"
-        android:textColor="@color/color_textview_font"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/etVerificarContraseña"
-        android:layout_width="296dp"
-        android:layout_height="46dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="269dp"
-        android:background="@drawable/texto_redondo"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/et_verificar_correo"
-        android:inputType="textPassword"
-        android:textColor="@color/color_textview_font"
-        android:textSize="18sp" />
+    tools:context=".RegistroEmpleado2">
 
     <Button
-        android:id="@+id/btnRegistrarEmpleado"
+        android:id="@+id/btnRegistrarEmpleado2"
         android:layout_width="242dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="74dp"
         android:background="@drawable/boton_redondo"
-        android:text="@string/btn_registro_uno"
-        android:textColor="@color/color_font"
-        android:textSize="24sp" />
+        android:text="@string/btn_registro_uno" />
 
     <EditText
-        android:id="@+id/etCorreo"
-        android:layout_width="295dp"
-        android:layout_height="46dp"
+        android:id="@+id/etLocalidadRegistro"
+        android:layout_width="296dp"
+        android:layout_height="48dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="402dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="291dp"
         android:background="@drawable/texto_redondo"
         android:ems="10"
         android:gravity="center"
-        android:hint="@string/tv_correo"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/color_textview_font" />
+        android:hint="@string/et_localidad"
+        android:textColor="@color/color_textview_font"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etNombreEmpleado"
+        android:layout_width="296dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="374dp"
+        android:background="@drawable/texto_redondo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/et_nombre"
+        android:textColor="@color/color_textview_font"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etOficioRegistro"
+        android:layout_width="296dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="214dp"
+        android:background="@drawable/texto_redondo"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/et_oficio"
+        android:textColor="@color/color_textview_font"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvPaso1"
@@ -72,10 +68,10 @@
         android:layout_height="78dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="581dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="577dp"
         android:gravity="center"
-        android:text="@string/tv_paso_uno"
+        android:text="@string/tv_paso_dos"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/color_font"
         android:textSize="36sp" />
