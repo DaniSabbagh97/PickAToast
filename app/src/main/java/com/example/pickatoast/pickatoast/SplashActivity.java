@@ -1,19 +1,14 @@
-package com.example.pickatoast.pickatoast.Activities;
+package com.example.pickatoast.pickatoast;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pickatoast.pickatoast.MainActivity;
-import com.example.pickatoast.pickatoast.R;
 import com.example.pickatoast.pickatoast.Services.XmlAnimationService;
 
 public class SplashActivity extends AppCompatActivity  {

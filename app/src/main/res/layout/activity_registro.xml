@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro">
+
+    <ImageButton
+        android:id="@+id/imgbEmpleado"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="371dp"
+        app:srcCompat="@drawable/toast_logo" />
+
+    <ImageButton
+        android:id="@+id/imgbEmpelador"
+        android:layout_width="match_parent"
+        android:layout_height="374dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/toast_logo" />
+</RelativeLayout>

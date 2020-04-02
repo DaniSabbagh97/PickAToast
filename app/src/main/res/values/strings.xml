@@ -11,4 +11,6 @@
     <string name="et_oficio">Oficio</string>
     <string name="tv_paso_dos">Paso 2</string>
     <string name="CLAVE_CORREO">CLAVE CORREO</string>
+    <string name="btn_registro">Registrarse</string>
+    <string name="btn_login">Log in</string>
 </resources>

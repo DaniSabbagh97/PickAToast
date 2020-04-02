@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.pickatoast.pickatoast.Pojos.Oferta;
+import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.R;
 
 import java.util.ArrayList;
@@ -19,11 +19,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AdaptadorOfertas extends RecyclerView.Adapter<AdaptadorOfertas.InicioViewHolder> implements View.OnClickListener{
 
-    private ArrayList<Oferta> lista;
+    private ArrayList<OfertaEmpleador> lista;
     private View.OnClickListener listener;
     private Context contexto;
 
-    public AdaptadorOfertas(ArrayList<Oferta> lista, Context context){
+    public AdaptadorOfertas(ArrayList<OfertaEmpleador> lista, Context context){
         this.contexto=context;
         this.lista=lista;
     }
@@ -76,7 +76,7 @@ public class AdaptadorOfertas extends RecyclerView.Adapter<AdaptadorOfertas.Inic
 
         }
 
-        public void bindMensaje(Oferta oferta){
+        public void bindMensaje(OfertaEmpleador oferta){
             tvNombre.setText(oferta.getNombreOferta());
             tvRestaurante.setText(oferta.getRestauranteOferta());
             tvLocalidad.setText(oferta.getLocalizacionOferta());
