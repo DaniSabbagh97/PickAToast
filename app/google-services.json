@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "986902824039-bvetoe15qkg5mda8hbuc98e2vhjmukat.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pickatoast.pickatoast",
+            "certificate_hash": "dcc2653156f80cedf3cc6a55a811e982d75be6fe"
+          }
+        },
+        {
           "client_id": "986902824039-1hbbtke6lupnerf8ltvv56l1f3hv55jr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
