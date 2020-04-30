@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegristroEmpleado extends AppCompatActivity {
 
-    TextView tvNombre;
+
     TextView tvCorreo;
     EditText etContraseña;
     EditText etVerificarContraseña;
@@ -46,7 +46,7 @@ public class RegristroEmpleado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regristro_empleado);
 
-        tvNombre = findViewById(R.id.etNombreRe);
+
         tvCorreo = findViewById(R.id.etCorreo);
         etContraseña = findViewById(R.id.etContraseña);
         etVerificarContraseña = findViewById(R.id.etVerificarContraseña);
@@ -64,22 +64,20 @@ public class RegristroEmpleado extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 email = tvCorreo.getText().toString().trim();
-                email2=etVerificarContraseña.getText().toString().trim();
+
                 password = etContraseña.getText().toString().trim();
                 password2 = etVerificarContraseña.getText().toString().trim();
-                nombre= tvNombre.getText().toString().trim();
 
-                if(email.isEmpty() || email2.isEmpty()) {
+
+                if(email.isEmpty()) {
                     Toast.makeText( RegristroEmpleado.this, "Debe introducirse el email y la password", Toast.LENGTH_SHORT ).show();
-                } else if (nombre.isEmpty()) {
-                    Toast.makeText( RegristroEmpleado.this, "Debe introducir el Nombre", Toast.LENGTH_SHORT ).show();
-                } else if (password.length() < 6) {
+                }else if (password.length() < 6) {
                     Toast.makeText( RegristroEmpleado.this, "La password debe contener al menos 6 caracteres", Toast.LENGTH_SHORT ).show();
                 } else if (!password.equals( password2 )) {
                     Toast.makeText( RegristroEmpleado.this, "Las contraseñas deben de coincidir", Toast.LENGTH_SHORT ).show();
-                } else if(!email.equals(email2)){
+                } /*else if(!email.equals(email2)){
                     Toast.makeText( RegristroEmpleado.this, "Los correos deben de coincidir", Toast.LENGTH_SHORT ).show();
-                }
+                }*/
                 else{
                     progressDialog.setMessage( "Realizando registro en linea. . ." );
                     progressDialog.show();
@@ -100,8 +98,13 @@ public class RegristroEmpleado extends AppCompatActivity {
                                     progressDialog.dismiss();
                                 }
                             });
+                    Intent intent=new Intent(RegristroEmpleado.this, RegistroEmpleado2.class);
+                    intent.putExtra("CLAVE CORREO", email);
+                    startActivity(intent);
 
                 }
+
+
             }
         });
 

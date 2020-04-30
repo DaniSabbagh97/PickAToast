@@ -1,68 +1,31 @@
 package com.example.pickatoast.pickatoast.Pojos;
 
+import java.util.ArrayList;
+
 public class Empleador {
 
-    private String nombre;
-    private String correo;
-    private String localidad;
-    private String puntuacion;
-    private String tipo;
-    private String imagen;
+    String nombreEmpleado;
+    String nombreEmpresa;
+    String correoEmpleador;
+    String ciudadEmpleador;
+    String direccionEmpleador;
+    String imagenLogoEmpresaURL;
+    String descripcionEmpleador;
+    ArrayList<String> coleccionImagenesEmpresa;
+    boolean buscaEmpleado;
+    ArrayList<OfertaEmpleador> ofertaEmpleador;
 
-    public Empleador(String nombre, String correo, String localidad, String puntuacion, String tipo, String imagen) {
-        this.nombre = nombre;
-        this.correo = correo;
-        this.localidad = localidad;
-        this.puntuacion = puntuacion;
-        this.tipo = tipo;
-        this.imagen = imagen;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getLocalidad() {
-        return localidad;
-    }
-
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-    }
-
-    public String getPuntuacion() {
-        return puntuacion;
-    }
-
-    public void setPuntuacion(String puntuacion) {
-        this.puntuacion = puntuacion;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public Empleador(String nombreEmpleado, String nombreEmpresa, String correoEmpleador, String ciudadEmpleador, String direccionEmpleador, String imagenLogoEmpresaURL, String descripcionEmpleador,
+                     ArrayList<String> coleccionImagenesEmpresa, boolean buscaEmpleado, ArrayList<OfertaEmpleador> ofertaEmpleador) {
+        this.nombreEmpleado = nombreEmpleado;
+        this.nombreEmpresa = nombreEmpresa;
+        this.correoEmpleador = correoEmpleador;
+        this.ciudadEmpleador = ciudadEmpleador;
+        this.direccionEmpleador = direccionEmpleador;
+        this.imagenLogoEmpresaURL = imagenLogoEmpresaURL;
+        this.descripcionEmpleador = descripcionEmpleador;
+        this.coleccionImagenesEmpresa = coleccionImagenesEmpresa;
+        this.buscaEmpleado = buscaEmpleado;
+        this.ofertaEmpleador = ofertaEmpleador;
     }
 }
