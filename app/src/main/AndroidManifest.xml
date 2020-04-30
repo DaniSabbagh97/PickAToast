@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegristroEmpleado" />
-       <!-- <activity android:name=".Contratos" /> -->
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistroEmpleado2" />
     </application>
