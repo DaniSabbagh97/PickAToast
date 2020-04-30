@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".RegristroEmpleado"/>
         <activity android:name=".Contratos"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MenuTests"/>
     </application>
 
 </manifest>

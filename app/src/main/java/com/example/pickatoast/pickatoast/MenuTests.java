@@ -1,9 +1,6 @@
 package com.example.pickatoast.pickatoast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +13,7 @@ import com.example.pickatoast.pickatoast.Interfaces.TopMainMenuImpl;
 import com.example.pickatoast.pickatoast.Services.XmlAnimationService;
 
 
-public class MainActivity extends AppCompatActivity implements TopMainMenuImpl {
+public class MenuTests extends AppCompatActivity implements TopMainMenuImpl {
     FrameLayout leftMenu;
 
     Button btn;
@@ -30,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements TopMainMenuImpl {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(MainActivity.this,RegristroEmpleado.class);
+                Intent i= new Intent(MenuTests.this,RegristroEmpleado.class);
                 startActivity(i);
             }
         });
