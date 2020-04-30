@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activities.SplashActivity">
+
         <activity android:name=".RegistroEmpleador1"></activity>
         <activity android:name=".Registro" />
         <activity android:name=".SplashActivity">
@@ -20,11 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegristroEmpleado" />
-        <activity android:name=".Contratos" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistroEmpleado2" />
-        <activity android:name=".RegristroEmpleado"/>
-        <activity android:name=".Contratos"/>
         <activity android:name=".MenuTests2"/>
     </application>
 
