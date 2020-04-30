@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.pickatoast.pickatoast.Adapters.AdaptadorOfertas;
+//import com.example.pickatoast.pickatoast.Adapters.AdaptadorOfertas;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,10 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class Contratos extends AppCompatActivity {
+//public class Contratos extends AppCompatActivity {
 
-
-    AdaptadorOfertas adapter;
+/*
+    //AdaptadorOfertas adapter;
 
     ArrayList<OfertaEmpleador> datos;
     ArrayList<OfertaEmpleador> todosContratos;
@@ -50,7 +50,7 @@ public class Contratos extends AppCompatActivity {
 
         todosContratos= new ArrayList<>();
         datos=new ArrayList<>();
-        adapter= new AdaptadorOfertas(datos,this);
+        //adapter= new AdaptadorOfertas(datos,this);
 
         rvContratos=findViewById(R.id.rvContratos);
 
@@ -60,26 +60,26 @@ public class Contratos extends AppCompatActivity {
             uid=user.getUid();
         }
 
-        llm= new LinearLayoutManager(this);
+        llm= new LinearLayoutManager(this);*/
 
-        rvContratos.setLayoutManager(llm);
-        rvContratos.setAdapter(adapter);
+      /*  rvContratos.setLayoutManager(llm);
+       // rvContratos.setAdapter(adapter);
         rvContratos.setItemAnimator(new DefaultItemAnimator());
         dbr= FirebaseDatabase.getInstance().getReference().child("contratos");
-
-        adapter.setOnClickListener(new View.OnClickListener() {
-            @Override
+*/
+        //adapter.setOnClickListener(new View.OnClickListener() {
+     /*       @Override
             public void onClick(View v) {
                 OfertaEmpleador o=datos.get(rvContratos.getChildAdapterPosition(v));
-                /*TODO hace falta la siguiente ventana para acarbarlo
+                *//*TODO hace falta la siguiente ventana para acarbarlo
                 Intent intent= new Intent(Contratos.this, Siguiente.class)
-                stratActivity(intent);*/
+                stratActivity(intent);*//*
             }
         });
 
-    }
+    }*/
 
-    private void addChildEventListener(){
+   /* private void addChildEventListener(){
         if(cel==null){
             if(cel == null){
                 cel= new ChildEventListener() {
@@ -93,8 +93,8 @@ public class Contratos extends AppCompatActivity {
 
                         adapter.notifyItemInserted(datos.size()-1);
                     }
-
-                    @Override
+*/
+               /*     @Override
                     public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
                     }
@@ -123,4 +123,4 @@ public class Contratos extends AppCompatActivity {
         super.onResume();
         addChildEventListener();
     }
-}
+}*/

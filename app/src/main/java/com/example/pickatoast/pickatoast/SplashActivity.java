@@ -43,8 +43,8 @@ public class SplashActivity extends AppCompatActivity  {
         Runnable r=new Runnable() {
             public void run() {
 
-                Intent guestActivity = new Intent(context, MainActivity.class);
-                startActivity(guestActivity);
+                Intent RegistroEmpleado = new Intent(context, RegristroEmpleado.class);
+                startActivity(RegistroEmpleado);
                 finish();
 
             }
