@@ -19,6 +19,7 @@
         <activity android:name=".RegristroEmpleado"/>
         <activity android:name=".Contratos"/>
         <activity android:name=".MenuTests"/>
+        <activity android:name=".MenuTests2"/>
     </application>
 
 </manifest>

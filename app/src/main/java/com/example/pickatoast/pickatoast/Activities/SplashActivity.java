@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pickatoast.pickatoast.MenuTests;
+import com.example.pickatoast.pickatoast.MenuTests2;
 import com.example.pickatoast.pickatoast.R;
 import com.example.pickatoast.pickatoast.Services.XmlAnimationService;
 
@@ -45,7 +45,7 @@ public class SplashActivity extends AppCompatActivity  {
         Runnable r=new Runnable() {
             public void run() {
 
-                Intent guestActivity = new Intent(context, MenuTests.class);
+                Intent guestActivity = new Intent(context, MenuTests2.class);
                 startActivity(guestActivity);
                 finish();
 
