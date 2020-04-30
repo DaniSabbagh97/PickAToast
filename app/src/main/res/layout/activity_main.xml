@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cream">
 
 
     <Button
@@ -21,16 +22,30 @@
         app:layout_constraintVertical_bias="0.932" />
 
     <fragment
+        android:id="@+id/leftMenu"
+        android:name="com.example.pickatoast.pickatoast.Fragments.LeftMainMenu"
+        android:layout_width="194dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout="@layout/fragment_left_main_menu" />
+    <fragment
         android:id="@+id/menu"
         android:name="com.example.pickatoast.pickatoast.Fragments.TopMainMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_top_main_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout="@layout/fragment_top_main_menu" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
