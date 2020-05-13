@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.pickatoast.pickatoast.Adapters.AdaptadorOfertas;
-import com.example.pickatoast.pickatoast.Pojos.Oferta;
+import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -28,14 +27,14 @@ public class Contratos extends AppCompatActivity {
 
     AdaptadorOfertas adapter;
 
-    ArrayList<Oferta> datos;
-    ArrayList<Oferta> todosContratos;
+    ArrayList<OfertaEmpleador> datos;
+    ArrayList<OfertaEmpleador> todosContratos;
     private ChildEventListener cel;
     private DatabaseReference dbr;
     RecyclerView rvContratos;
     LinearLayoutManager llm;
 
-    Oferta oferta;
+    OfertaEmpleador oferta;
 
     FirebaseUser user;
 
@@ -71,7 +70,7 @@ public class Contratos extends AppCompatActivity {
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Oferta o=datos.get(rvContratos.getChildAdapterPosition(v));
+                OfertaEmpleador o=datos.get(rvContratos.getChildAdapterPosition(v));
                 /*TODO hace falta la siguiente ventana para acarbarlo
                 Intent intent= new Intent(Contratos.this, Siguiente.class)
                 stratActivity(intent);*/
@@ -86,7 +85,7 @@ public class Contratos extends AppCompatActivity {
                 cel= new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                        oferta = (Oferta) dataSnapshot.getValue(Oferta.class);
+                        oferta = (OfertaEmpleador) dataSnapshot.getValue(OfertaEmpleador.class);
 
                         if (oferta.getId().equals(uid)) {
                             datos.add(oferta);
