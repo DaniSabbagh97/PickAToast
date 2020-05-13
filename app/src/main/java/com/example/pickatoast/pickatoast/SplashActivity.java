@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pickatoast.pickatoast.MenuTests2;
+import com.example.pickatoast.pickatoast.R;
 import com.example.pickatoast.pickatoast.Services.XmlAnimationService;
 
 public class SplashActivity extends AppCompatActivity  {
@@ -43,13 +45,14 @@ public class SplashActivity extends AppCompatActivity  {
         Runnable r=new Runnable() {
             public void run() {
 
-                Intent RegistroEmpleado = new Intent(context, RegristroEmpleado.class);
-                startActivity(RegistroEmpleado);
+                //Cambiar segun a la activity  a a la que quieres que te lleve la animacion
+                Intent guestActivity = new Intent(context, MainActivity.class);
+                startActivity(guestActivity);
                 finish();
 
             }
         };
-        handler.postDelayed(r, (int) (secondsOfDelay * 5000));
+        handler.postDelayed(r, (int) (secondsOfDelay * 3000));
     }
 
 }

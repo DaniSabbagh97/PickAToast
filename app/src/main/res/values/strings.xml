@@ -13,4 +13,10 @@
     <string name="CLAVE_CORREO">CLAVE CORREO</string>
     <string name="btn_registro">Registrarse</string>
     <string name="btn_login">Log in</string>
+
+
+    <!--Descripcion de ImageButtons para que no lo de como error-->
+    <string name="topMainMenuSideMenuButtonDesc">Hamburguer button to open the left menu</string>
+    <string name="topMainMenuNotificationButtonDesc">Bell button to open the app´s notifications</string>
+    <string name="topMainMenuProfileButtonDesc">User´s Picture button to open his profile</string>
 </resources>

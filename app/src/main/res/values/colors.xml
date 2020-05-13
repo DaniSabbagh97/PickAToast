@@ -5,4 +5,8 @@
     <color name="colorAccent">#F0BC5E</color>
     <color name="color_font">#3C2F18</color>
     <color name="color_textview_font">#BBA9AB</color>
+    <color name="color_textview_font">#411C1C</color>
+    <color name="brown">#593911</color>
+    <color name="cream">#F9F4EE</color>
+    <color name="beige">#BBA9AB</color>
 </resources>

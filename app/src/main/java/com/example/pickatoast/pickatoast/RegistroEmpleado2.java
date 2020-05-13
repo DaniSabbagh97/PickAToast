@@ -67,9 +67,9 @@ public class RegistroEmpleado2 extends AppCompatActivity {
 
                 databaseRef.child(uid).setValue(datosUsuario);
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2
-                Toast.makeText(RegistroEmpleado2.this,"Su usuario ha sido registrado",Toast.LENGTH_LONG).show();
-                //Intent intent2=new Intent(RegistroEmpleado2.this, Contratos.class);
-                //startActivity(intent2);
+                /*Toast.makeText(RegistroEmpleado2.this,"Su usuario ha sido registrado",Toast.LENGTH_LONG).show();
+                Intent intent2=new Intent(RegistroEmpleado2.this, Contratos.class);
+                startActivity(intent2);*/
             }
         });
 
