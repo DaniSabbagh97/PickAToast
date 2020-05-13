@@ -1,4 +1,4 @@
-package com.example.pickatoast.pickatoast.Activities;
+package com.example.pickatoast.pickatoast;
 
 import android.content.Context;
 import android.content.Intent;
