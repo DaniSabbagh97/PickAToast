@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brown"
+        android:background="@color/cream"
         android:orientation="horizontal"
         android:weightSum="1"
 >
@@ -23,24 +24,26 @@
             android:src="@android:drawable/ic_menu_sort_by_size"
             android:contentDescription="@string/topMainMenuSideMenuButtonDesc"
            />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="end">
+
             <ImageButton
                 android:id="@+id/topMainMenuNotificationButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@android:drawable/ic_popup_reminder"
+                android:background="#00FFFFFF"
                 android:contentDescription="@string/topMainMenuNotificationButtonDesc"
-                />
+                android:src="@drawable/bell2" />
 
             <ImageButton
                 android:id="@+id/topMainMenuProfileButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/fui_ic_anonymous_white_24dp"
-                android:contentDescription="@string/topMainMenuProfileButtonDesc"/>
+                android:contentDescription="@string/topMainMenuProfileButtonDesc"
+                android:src="@drawable/fui_ic_anonymous_white_24dp" />
         </LinearLayout>
 
 
