@@ -57,4 +57,29 @@
         <!-- Personalize :
         android:layout_width, android:layout_height, android:layout_marginEnd, android:layout_marginBottom , android:textSize-->
     </style>
+
+    <style name="icons_buttons">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="menu_icons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="menu_options">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@color/cream</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/segoui</item>
+    </style>
 </resources>

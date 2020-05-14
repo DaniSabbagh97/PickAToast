@@ -8,4 +8,7 @@
     <color name="brown">#593911</color>
     <color name="cream">#F9F4EE</color>
     <color name="beige">#BBA9AB</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="shade"> #64BEBEBE </color>
+    <color name="white" >#ffffff</color>
 </resources>
