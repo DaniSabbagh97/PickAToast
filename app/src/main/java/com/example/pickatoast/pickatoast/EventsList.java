@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.pickatoast.pickatoast.Adapters.CardListEventsAdapter;
+import com.example.pickatoast.pickatoast.Interfaces.TopMainMenuImpl;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 
 import java.util.ArrayList;
 
-public class EventsList extends AppCompatActivity {
+public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
 
     RecyclerView rv;
     ArrayList<OfertaEmpleador> _ofertas;
@@ -37,5 +38,10 @@ public class EventsList extends AppCompatActivity {
         adapter.notifyDataSetChanged();
 
         rv.setHasFixedSize( true );
+    }
+
+    @Override
+    public void menu(int buttonClicked) {
+
     }
 }
