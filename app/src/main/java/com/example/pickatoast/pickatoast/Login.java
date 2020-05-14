@@ -64,7 +64,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    //startActivity(new Intent(Login.this,));
+                    Intent intent2=new Intent(Login.this, EditarEmpleador.class);
+                    startActivity(intent2);
                     Toast.makeText(Login.this,"Todo good", Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(Login.this,"Fallo wey", Toast.LENGTH_LONG).show();

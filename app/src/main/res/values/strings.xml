@@ -16,4 +16,8 @@
     <string name="nombre_empresa">Introduce el nombre de la empresa</string>
     <string name="localidad_empresa">Introduce la localidad de la empresa</string>
     <string name="direccion_empresa">Introduce la direccion de la empresa</string>
+    <string name="btn_cam_img_empleador">Cambiar Imagen</string>
+    <string name="btn_editar_empleador">Editar Datos</string>
+    <string name="btn_guardar_empleador">Guardar</string>
+    <string name="btn_cambiar_contraseña">Borrar Perfil</string>
 </resources>

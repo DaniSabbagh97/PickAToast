@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +29,9 @@ public class RegistroEmpleador1 extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     ProgressDialog progressDialog;
     DatabaseReference mDatabaseRef;
+    private FirebaseAuth mAuth;
+    FirebaseUser user;
+
 
     String email;
     String password;
@@ -44,6 +48,7 @@ public class RegistroEmpleador1 extends AppCompatActivity {
         btnRegistrarEmpleado=findViewById(R.id.btnSubirEmpelador);
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child( "Users" );
+        mAuth=FirebaseAuth.getInstance();
 
         progressDialog = new ProgressDialog( this );
 
@@ -76,6 +81,22 @@ public class RegistroEmpleador1 extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     //checking if success
                                     if(task.isSuccessful()){
+                                        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                                if (task.isSuccessful()){
+                                                    user=mAuth.getCurrentUser();
+                                                    String clave=user.getUid();
+                                                    Intent intent2=new Intent(RegistroEmpleador1.this, RegistroEmpleador2.class);
+                                                    intent2.putExtra("CLAVE CORREO EMPLEADOR", email);
+                                                    intent2.putExtra("CLAVE ID", clave);
+                                                    startActivity(intent2);
+                                                        Toast.makeText(RegistroEmpleador1.this,"Todo good", Toast.LENGTH_LONG).show();
+                                                }else{
+                                                    Toast.makeText(RegistroEmpleador1.this,"Fallo wey", Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+                                        });
 
                                         Toast.makeText(RegistroEmpleador1.this,"Se ha registrado el usuario",Toast.LENGTH_LONG).show();
                                     }else{
@@ -86,9 +107,7 @@ public class RegistroEmpleador1 extends AppCompatActivity {
                                     progressDialog.dismiss();
                                 }
                             });
-                    Intent intent=new Intent(RegistroEmpleador1.this, RegistroEmpleador2.class);
-                    intent.putExtra("CLAVE CORREO EMPLEADOR", email);
-                    startActivity(intent);
+
 
                 }
 

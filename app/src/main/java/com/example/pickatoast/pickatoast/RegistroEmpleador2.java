@@ -27,6 +27,7 @@ public class RegistroEmpleador2 extends AppCompatActivity {
 
     String email;
     String nombre;
+    String clave;
     FirebaseUser user;
     String uid;
 
@@ -42,6 +43,7 @@ public class RegistroEmpleador2 extends AppCompatActivity {
         btnSubirDatosEmpleador=findViewById(R.id.btnSubidaEmpleadorDatos);
 
         email=getIntent().getExtras().getString("CLAVE CORREO EMPLEADOR");
+        clave=getIntent().getExtras().getString("CLAVE ID");
         user= FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
@@ -63,17 +65,17 @@ public class RegistroEmpleador2 extends AppCompatActivity {
 
                 Map<String, Object> datosEmpresa= new HashMap<>();
 
-                datosEmpresa.put("nombre",nombre);
-                datosEmpresa.put("correo", email);
-                datosEmpresa.put("localidad", localidad);
-                datosEmpresa.put("direccion", direccion);
+                datosEmpresa.put("nombreEmpresa",nombre);
+                datosEmpresa.put("correoEmpleador", email);
+                datosEmpresa.put("ciudadEmpleador", localidad);
+                datosEmpresa.put("direccionEmpleador", direccion);
                 datosEmpresa.put("id",uid);
 
-                databaseRef.child(nombre).setValue(datosEmpresa);
+                databaseRef.child(uid).setValue(datosEmpresa);
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2
-                /*Toast.makeText(RegistroEmpleador2.this,"Su usuario ha sido registrado",Toast.LENGTH_LONG).show();
-                Intent intent2=new Intent(RegistroEmpleador2.this, Contratos.class);
-                startActivity(intent2);*/
+                Toast.makeText(RegistroEmpleador2.this,"Su usuario ha sido registrado",Toast.LENGTH_LONG).show();
+                Intent intent2=new Intent(RegistroEmpleador2.this, EditarEmpleador.class);
+                startActivity(intent2);
             }
         });
     }

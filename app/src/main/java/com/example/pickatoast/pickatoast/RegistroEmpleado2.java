@@ -66,7 +66,7 @@ public class RegistroEmpleado2 extends AppCompatActivity {
                 datosUsuario.put("oficio", oficio);
                 datosUsuario.put("id",uid);
 
-                databaseRef.child(nombre).setValue(datosUsuario);
+                databaseRef.child(uid).setValue(datosUsuario);
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2
                 /*Toast.makeText(RegistroEmpleado2.this,"Usuario guardado",Toast.LENGTH_LONG).show();
                 Intent intent2=new Intent(RegistroEmpleado2.this, Contratos.class);
