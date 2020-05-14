@@ -22,8 +22,7 @@ public class TopMainMenu extends Fragment{
 
     //Botones del menu
     private final int[] MENUBUTTONS={R.id.topMainMenuSideMenuButton,
-            R.id.topMainMenuNotificationButton,
-            R.id.topMainMenuProfileButton};
+            R.id.topMainMenuNotificationButton};
 
     public TopMainMenu() {
         // Required empty public constructor

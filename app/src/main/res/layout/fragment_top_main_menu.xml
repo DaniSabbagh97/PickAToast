@@ -31,16 +31,18 @@
             <ImageButton
                 android:id="@+id/topMainMenuNotificationButton"
                 style="@style/icons_buttons"
+                android:layout_width="60dp"
                 android:contentDescription="@string/topMainMenuNotificationButtonDesc"
                 android:rotation="20"
                 android:src="@drawable/bell2" />
 
-            <ImageButton
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/topMainMenuProfileButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@drawable/round_button_profile"
                 android:contentDescription="@string/topMainMenuProfileButtonDesc"
+                android:padding="5dp"
                 android:src="@drawable/profile_girl" />
 
         </LinearLayout>
