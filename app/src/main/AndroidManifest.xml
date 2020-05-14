@@ -9,20 +9,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        <activity android:name=".RegistroEmpleador1"></activity>
-        <activity android:name=".Registro" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".EventsList"></activity>
+        <activity android:name=".CreateEvent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegistroEmpleador1" />
+        <activity android:name=".Registro" />
+        <activity android:name=".SplashActivity"></activity>
         <activity android:name=".RegristroEmpleado" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegistroEmpleado2" />
-        <activity android:name=".MenuTests2"/>
+        <activity android:name=".MenuTests2" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@layout/provider_paths"></meta-data>
+        </provider>
     </application>
+    <uses-permission
+        android:name="android.hardware.Camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>
