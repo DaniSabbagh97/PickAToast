@@ -5,36 +5,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class Registro extends AppCompatActivity {
 
-    ImageButton imgbEmpleado;
-    ImageButton imgbEmplador;
+
+    ImageButton imgEmpelador;
+    ImageButton imgEmpleado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        imgEmpleado=findViewById(R.id.ibRegistroEmpleado);
+        imgEmpelador=findViewById(R.id.ibRegistroEmpleador);
 
-        imgbEmpleado=findViewById(R.id.imgbEmpleado);
-        imgbEmplador=findViewById(R.id.imgbEmpelador);
-
-        imgbEmpleado.setOnClickListener(new View.OnClickListener() {
+        imgEmpelador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(Registro.this,RegristroEmpleado.class);
-                startActivity(i);
+                startActivity(new Intent(Registro.this,RegistroEmpleador1.class));
             }
         });
 
-        imgbEmplador.setOnClickListener(new View.OnClickListener() {
+        imgEmpleado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(Registro.this,RegistroEmpleador1.class);
-                startActivity(i);
+                startActivity(new Intent(Registro.this, RegristroEmpleado.class));
             }
         });
-
     }
 }

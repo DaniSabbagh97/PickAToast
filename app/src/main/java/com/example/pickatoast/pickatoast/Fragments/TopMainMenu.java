@@ -22,8 +22,7 @@ public class TopMainMenu extends Fragment{
     String fragmentName = this.getClass().getSimpleName();
     //Botones del menu
     private final int[] MENUBUTTONS={R.id.topMainMenuSideMenuButton,
-            R.id.topMainMenuNotificationButton,
-            R.id.topMainMenuProfileButton};
+            R.id.topMainMenuNotificationButton};
 
     public TopMainMenu() {
         // Required empty public constructor
