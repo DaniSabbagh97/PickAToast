@@ -20,7 +20,7 @@ import com.example.pickatoast.pickatoast.R;
 public class LeftMainMenu extends Fragment {
     //TODO esta mierda esta copiada del menu de arriba, hay que adaptarlo bien
 
-    String fragmentName = this.getClass().getSimpleName();
+    private String fragmentName = this.getClass().getSimpleName();
     //Botones del menu
     private final int[] MENUICONBUTTONS={R.id.topMainMenuSideMenuButtonIcon,
             R.id.topMainMenuNotificationButtonIcon,
@@ -42,7 +42,8 @@ public class LeftMainMenu extends Fragment {
 
 
 
-        //Esto permite identificar automaticamente la actividad en la que nos encontramos al pulsar el boton
+
+        //Recorremos todos los botones de icono y le añadimos un onClickListener
         for(int i =0;i<MENUICONBUTTONS.length;i++)
         {
             ImageButton menuButton=menu.findViewById(MENUICONBUTTONS[i]);
@@ -52,7 +53,7 @@ public class LeftMainMenu extends Fragment {
 
            setOnClickOfButtons(menuButton,numberOfButtonPressed);
         }
-        //Esto permite identificar automaticamente la actividad en la que nos encontramos al pulsar el boton
+        //Recorremos todos los botones y le añadimos un onClickListener
         for(int i =0;i<MENUBUTTONS.length;i++)
         {
             Button menuButton=menu.findViewById(MENUBUTTONS[i]);
@@ -64,6 +65,8 @@ public class LeftMainMenu extends Fragment {
         }
         return menu;
     }
+
+    //Esto permite identificar automaticamente la actividad en la que nos encontramos al pulsar el boton
     private void setOnClickOfButtons(View menuButton, final int numberOfButtonPressed){
         menuButton.setOnClickListener(new View.OnClickListener(){
 
