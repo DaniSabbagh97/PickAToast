@@ -41,7 +41,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
     }
 
     @Override
-    public void menu(int buttonClicked) {
+    public void menu(int buttonClicked,String a) {
 
     }
 }

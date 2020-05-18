@@ -18,6 +18,8 @@ import com.example.pickatoast.pickatoast.R;
  */
 public class LeftMainMenu extends Fragment {
     //TODO esta mierda esta copiada del menu de arriba, hay que adaptarlo bien
+
+    String fragmentName = this.getClass().getSimpleName();
     //Botones del menu
     private final int[] MENUBUTTONS={R.id.topMainMenuSideMenuButton,
             R.id.topMainMenuNotificationButton,
@@ -52,7 +54,7 @@ public class LeftMainMenu extends Fragment {
                     Activity currentButtonActivity= getActivity();
 
                     //Casteo de la actividad al tipo de la interfaz, para poder llamar al metodo
-                    ((TopMainMenuImpl)currentButtonActivity).menu(numberOfButtonPressed);
+                    ((TopMainMenuImpl)currentButtonActivity).menu(numberOfButtonPressed, fragmentName);
                 }
             });
         }

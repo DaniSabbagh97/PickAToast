@@ -5,5 +5,5 @@ package com.example.pickatoast.pickatoast.Interfaces;
 * */
 public interface TopMainMenuImpl {
     //Metodo para detectar el boton pulsado dentro del menu
-    public void menu(int buttonClicked);
+    public void menu(int buttonClicked, String fragmentName);
 }

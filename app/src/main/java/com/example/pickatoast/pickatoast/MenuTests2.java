@@ -34,18 +34,18 @@ public class MenuTests2 extends AppCompatActivity implements TopMainMenuImpl {
     }
 
     @Override
-    public void menu(int buttonClicked) {
-        Toast.makeText(this,"El boton pulsado es el: "+buttonClicked,Toast.LENGTH_SHORT).show();
+    public void menu(int buttonClicked,String fragmentName) {
+        Toast.makeText(this,""+fragmentName+"El boton pulsado es el: "+buttonClicked,Toast.LENGTH_SHORT).show();
         switch (buttonClicked){
             case 0:
                 leftMenu.setEnabled(!leftMenu.isEnabled());
                 if(leftMenu.getVisibility()==View.VISIBLE)
                 {
                     leftMenu.setVisibility(View.INVISIBLE);
-                    leftMenuAnimation2();
+                    leftMenuAnimation(R.anim.left_slice);
                 }
                 else{
-                    leftMenuAnimation();
+                    leftMenuAnimation(R.anim.right_slice);
                     leftMenu.setVisibility(View.VISIBLE);
 
                 }
@@ -54,14 +54,9 @@ public class MenuTests2 extends AppCompatActivity implements TopMainMenuImpl {
         }
     }
 
-    public void leftMenuAnimation(){
+    public void leftMenuAnimation(int Animation){
         XmlAnimationService xmlAnimationService = new XmlAnimationService(this);
-        int[] animationArray ={R.anim.right_slice};
-        xmlAnimationService.runAnimationArrayInOrder(leftMenu,animationArray);
+        xmlAnimationService.runAnimation(leftMenu,Animation);
     }
-    public void leftMenuAnimation2(){
-        XmlAnimationService xmlAnimationService = new XmlAnimationService(this);
-        int[] animationArray ={R.anim.left_slice};
-        xmlAnimationService.runAnimationArrayInOrder(leftMenu,animationArray);
-    }
+
 }
