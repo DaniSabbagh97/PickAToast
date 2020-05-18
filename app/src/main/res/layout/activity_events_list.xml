@@ -7,32 +7,52 @@
     tools:context=".EventsList">
 
     <TextView
+        android:id="@+id/centersLayoutTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/centersLayoutTitle"
-        android:text="Lista de Eventos"
-        android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:textSize="36sp"
-        />
+        android:layout_marginTop="40dp"
+        android:text="Lista de Eventos"
+        android:textSize="36sp" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/scrollCentersList"
+        android:layout_width="match_parent"
+        android:layout_height="519dp"
+        android:layout_above="@+id/llbotones"
         android:layout_below="@+id/centersLayoutTitle"
-        android:layout_marginBottom="10dp">
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="123dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="10dp"
             android:id="@+id/rvEvents"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp"
 
             />
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/llBotones"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="30dp">
+
+        <Button
+            android:id="@+id/btnCrearEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Crear Evento" />
+    </LinearLayout>
 
 </RelativeLayout>

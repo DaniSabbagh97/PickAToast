@@ -23,36 +23,28 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAdapter.CardEventsViewHolder> {
 
-    private Context context;
     List<OfertaEmpleador> mOferta;
-    private Activity _activity;
 
-    CardListEventsAdapter adapter;
 
-    private final OfertaEmpleador[] ofertas = new OfertaEmpleador[1];
 
-    private FirebaseUser user;
-    DatabaseReference reference;
 
-    String nombre, descripcion;
+    String nombre, descripcion, foto;
 
-    public CardListEventsAdapter(List<OfertaEmpleador> mOferta, Activity _activity){
-        this.mOferta = mOferta;
-        this._activity = _activity;
-
-        obtenerDatosOfertas();
+    public CardListEventsAdapter(List<OfertaEmpleador> mOfertas) {
+        this.mOferta = mOfertas;
     }
+
+
     @NonNull
     @Override
-    public CardListEventsAdapter.CardEventsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        context = parent.getContext();
+    public CardEventsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from( parent.getContext()).inflate( R.layout.card_events_data ,parent, false );
-
         CardEventsViewHolder holder = new CardEventsViewHolder( view );
         return holder;
     }
@@ -64,9 +56,11 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
 
         nombre = ofertaEmpleador.getNombreOferta();
         descripcion = ofertaEmpleador.getDescripcionOferta();
+        foto = ofertaEmpleador.getLinkImagen();
 
         holder.tvNombre.setText( nombre );
         holder.tvDescripcion.setText( descripcion );
+        Picasso.get().load( foto ).into(holder.ivOferta);
         //TODO Colocar aqui cada oferta para que se recoja de firebase
 
         holder.btnApuntarse.setOnClickListener( new View.OnClickListener() {
@@ -88,7 +82,7 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mOferta.size();
     }
 
     public static class CardEventsViewHolder extends RecyclerView.ViewHolder{
@@ -113,7 +107,7 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
         }
     }
 
-    public void obtenerDatosOfertas() {
+    /*public void obtenerDatosOfertas() {
         //user = FirebaseAuth.getInstance().getCurrentUser();
 
 
@@ -139,5 +133,5 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
 
             }
         });
-    }
+    }*/
 }
