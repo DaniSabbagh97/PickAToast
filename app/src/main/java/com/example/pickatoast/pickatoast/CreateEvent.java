@@ -1,6 +1,7 @@
 package com.example.pickatoast.pickatoast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,6 +9,7 @@ import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -18,10 +20,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
@@ -38,7 +42,7 @@ import java.io.File;
 
 public class CreateEvent extends AppCompatActivity {
     private EditText etNombre, etRestaurante, etLocalizacion, etDuracion;
-    private Button btnCrearOferta, btnTakePhoto, btnOpenGallery;
+    private Button btnCrearOferta;
     private ImageView imvFotoOferta;
 
     private String nombreOferta;
@@ -65,78 +69,68 @@ public class CreateEvent extends AppCompatActivity {
     String RUTA_IMAGEN = CARPETA_RAIZ + CARPETAS_IMAGENES;
     String path;
 
-    int photoHeigth,photoWidth;
+    int photoHeigth, photoWidth;
     private String url;
 
 
     @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_create_event );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_create_event);
 
-        etNombre= (EditText) findViewById( R.id.etNombreOferta );
-        etRestaurante = (EditText) findViewById( R.id.etRestaurante );
-        etLocalizacion = (EditText) findViewById( R.id.etLocalizacionOferta );
-        etDuracion = (EditText)findViewById( R.id.etDuracion );
+        etNombre = (EditText) findViewById(R.id.etNombreOferta);
+        etRestaurante = (EditText) findViewById(R.id.etRestaurante);
+        etLocalizacion = (EditText) findViewById(R.id.etLocalizacionOferta);
+        etDuracion = (EditText) findViewById(R.id.etDuracion);
 
-        btnCrearOferta = (Button) findViewById( R.id.btnCrearOferta );
-        btnTakePhoto = (Button) findViewById( R.id.btnTakePhoto );
-        btnOpenGallery = (Button) findViewById( R.id.btnOpenGallery );
+        btnCrearOferta = (Button) findViewById(R.id.btnCrearOferta);
 
-        imvFotoOferta = (ImageView) findViewById( R.id.imvOferta );
+        imvFotoOferta = (ImageView) findViewById(R.id.imvOferta);
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Ofertas");
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
-        btnCrearOferta.setOnClickListener( new View.OnClickListener() {
+        btnCrearOferta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 checkFields();
             }
-        } );
-        btnTakePhoto.setOnClickListener( new View.OnClickListener() {
+        });
+
+        imvFotoOferta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                takePhoto();
+                popup();
             }
-        } );
-        btnOpenGallery.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                catchImage();
-            }
-        } );
+        });
 
 
-        if(ContextCompat.checkSelfPermission(CreateEvent.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(CreateEvent.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(CreateEvent.this,
                     new String[]{Manifest.permission.CAMERA,
                             Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
         }
 
 
-
-
-
     }
 
     private void saveData() {
 
-       // user = mAuth.getCurrentUser();
+        // user = mAuth.getCurrentUser();
         //String clave = user.getUid();
         String clave = "clave";
-        oferta = new OfertaEmpleador( clave, nombreOferta, descripcionOferta, nombreRestaurante, localizacionRestaurante, duracionOferta, url , true );
-        mDatabaseRef.child( clave ).setValue( oferta );
+        oferta = new OfertaEmpleador(clave, nombreOferta, descripcionOferta, nombreRestaurante, localizacionRestaurante, duracionOferta, url, true);
+        mDatabaseRef.child(clave).setValue(oferta);
 
         Intent i = new Intent(CreateEvent.this, EventsList.class);
         startActivity(i);
-        Toast.makeText( CreateEvent.this, "Oferta Creada con Éxito", Toast.LENGTH_LONG ).show();
+        Toast.makeText(CreateEvent.this, "Oferta Creada con Éxito", Toast.LENGTH_LONG).show();
 
 
     }
 
-    private void checkFields(){
+    private void checkFields() {
 
         nombreOferta = etNombre.getText().toString().trim();
         nombreRestaurante = etRestaurante.getText().toString().trim();
@@ -145,14 +139,12 @@ public class CreateEvent extends AppCompatActivity {
 
         //TODO RECOGER IMAGEN
 
-        if(nombreOferta.isEmpty() || nombreRestaurante.isEmpty()
-                || localizacionRestaurante.isEmpty() || duracionOferta.isEmpty()){
-            Toast.makeText( CreateEvent.this, "Debes rellenar todos los campos", Toast.LENGTH_LONG ).show();
-        }else {
+        if (nombreOferta.isEmpty() || nombreRestaurante.isEmpty()
+                || localizacionRestaurante.isEmpty() || duracionOferta.isEmpty()) {
+            Toast.makeText(CreateEvent.this, "Debes rellenar todos los campos", Toast.LENGTH_LONG).show();
+        } else {
             saveData();
         }
-
-
 
 
     }
@@ -163,30 +155,28 @@ public class CreateEvent extends AppCompatActivity {
     }
 
 
-
-
-    private void takePhoto(){
+    private void takePhoto() {
 
         String nombreImagen = "";
-        File fileImagen = new File( Environment.getExternalStorageDirectory(), RUTA_IMAGEN);
+        File fileImagen = new File(Environment.getExternalStorageDirectory(), RUTA_IMAGEN);
         boolean isCreada = fileImagen.exists();
 
-        if(isCreada == false) {
+        if (isCreada == false) {
             isCreada = fileImagen.mkdirs();
         }
 
-        if(isCreada == true) {
+        if (isCreada == true) {
             nombreImagen = (System.currentTimeMillis() / 1000) + ".jpg";
         }
 
-        path = Environment.getExternalStorageDirectory()+File.separator+RUTA_IMAGEN+File.separator+nombreImagen;
+        path = Environment.getExternalStorageDirectory() + File.separator + RUTA_IMAGEN + File.separator + nombreImagen;
         File imagen = new File(path);
 
         Intent intent = null;
-        intent = new Intent( MediaStore.ACTION_IMAGE_CAPTURE);
+        intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            String authorities = this.getPackageName()+".provider";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            String authorities = this.getPackageName() + ".provider";
             Uri imageUri = FileProvider.getUriForFile(this, authorities, imagen);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         } else {
@@ -201,7 +191,7 @@ public class CreateEvent extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK && requestCode == SELEC_IMAGEN) {
+        if (resultCode == RESULT_OK && requestCode == SELEC_IMAGEN) {
             imagenUri = data.getData();
             imvFotoOferta.setImageURI(imagenUri);
 
@@ -216,8 +206,6 @@ public class CreateEvent extends AppCompatActivity {
                         public void onSuccess(Uri uri) {
 
 
-
-
                             url = String.valueOf(uri);
                             btnCrearOferta.setEnabled(true);
 
@@ -226,7 +214,7 @@ public class CreateEvent extends AppCompatActivity {
 
                 }
             });
-        } else if(resultCode == RESULT_OK && requestCode == TOMAR_FOTO) {
+        } else if (resultCode == RESULT_OK && requestCode == TOMAR_FOTO) {
             MediaScannerConnection.scanFile(CreateEvent.this, new String[]{path}, null, new MediaScannerConnection.OnScanCompletedListener() {
                 @Override
                 public void onScanCompleted(String s, Uri uri) {
@@ -238,4 +226,34 @@ public class CreateEvent extends AppCompatActivity {
             imvFotoOferta.setImageBitmap(bitmap);
         }
     }
+
+    public void popup() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(CreateEvent.this);
+        View view;
+        view = LayoutInflater.from(CreateEvent.this).inflate(R.layout.customdialog, null);
+        TextView title = (TextView) view.findViewById(R.id.title);
+
+        title.setText("Seleccione la imagen");
+        builder.setPositiveButton("Galería", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                catchImage();
+
+            }
+        });
+        builder.setNegativeButton("Cámara", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                takePhoto();
+            }
+        });
+        builder.setView(view);
+        builder.show();
+
+
+    }
 }
+

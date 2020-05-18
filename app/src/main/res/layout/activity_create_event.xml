@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".CreateEvent">
 
-    <Button
-        android:id="@+id/btnTakePhoto"
-        android:layout_width="94dp"
-        android:layout_height="45dp"
-        android:text="Cámara"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+
 
     <EditText
         android:id="@+id/etDuracion"
@@ -142,17 +132,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <Button
-        android:id="@+id/btnOpenGallery"
-        android:layout_width="85dp"
-        android:layout_height="41dp"
-        android:text="Galería"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+
 
     <Button
         android:id="@+id/btnCrearOferta"
@@ -168,6 +148,7 @@
 
     <ImageView
         android:id="@+id/imvOferta"
+        app:srcCompat="@drawable/upload_image"
         android:layout_width="131dp"
         android:layout_height="114dp"
         app:layout_constraintBottom_toBottomOf="parent"
