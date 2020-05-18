@@ -19,10 +19,10 @@ import com.example.pickatoast.pickatoast.R;
  * A simple {@link Fragment} subclass.
  */
 public class TopMainMenu extends Fragment{
-
+    private String fragmentName = this.getClass().getSimpleName();
     //Botones del menu
     private final int[] MENUBUTTONS={R.id.topMainMenuSideMenuButton,
-            R.id.topMainMenuNotificationButton};
+            R.id.topMainMenuNotificationButton,R.id.topMainMenuProfileButton};
 
     public TopMainMenu() {
         // Required empty public constructor
@@ -37,12 +37,12 @@ public class TopMainMenu extends Fragment{
         //Vista menu
         View menu = inflater.inflate(R.layout.fragment_top_main_menu, container, false);
 
-        ImageButton menuButton;
+        View menuButton;
 
         //Esto permite identificar automaticamente la actividad en la que nos encontramos al pulsar el boton
         for(int i =0;i<MENUBUTTONS.length;i++)
         {
-            menuButton=(ImageButton)menu.findViewById(MENUBUTTONS[i]);
+            menuButton=menu.findViewById(MENUBUTTONS[i]);
 
             //Numero del boton pulsado segun el array recorrido de todos los botones
             final int numberOfButtonPressed=i;
@@ -55,7 +55,7 @@ public class TopMainMenu extends Fragment{
                     Activity currentButtonActivity= getActivity();
 
                     //Casteo de la actividad al tipo de la interfaz, para poder llamar al metodo
-                    ((TopMainMenuImpl)currentButtonActivity).menu(numberOfButtonPressed);
+                    ((TopMainMenuImpl)currentButtonActivity).menu(numberOfButtonPressed,fragmentName);
                 }
             });
         }
