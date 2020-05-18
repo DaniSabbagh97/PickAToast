@@ -46,8 +46,8 @@ public class SplashActivity extends AppCompatActivity  {
             public void run() {
 
                 //Cambiar segun a la activity  a a la que quieres que te lleve la animacion
-                Intent guestActivity = new Intent(context, MainActivity.class);
-                startActivity(guestActivity);
+                Intent creat = new Intent(context, CreateEvent.class);
+                startActivity(creat);
                 finish();
 
             }
