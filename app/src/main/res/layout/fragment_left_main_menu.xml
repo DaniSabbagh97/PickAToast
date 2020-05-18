@@ -28,17 +28,18 @@ tools:context=".Fragments.LeftMainMenu">
                     android:id="@+id/topMainMenuSideMenuButton"
                     android:layout_marginTop="200dp"
                     android:src="@drawable/user"
+                    android:paddingLeft="16dp"
                     style="@style/menu_icons" />
 
                 <ImageButton
                     android:id="@+id/topMainMenuNotificationButton"
                     style="@style/menu_icons"
-                    android:src="@drawable/campana" />
+                    android:src="@drawable/bell_light" />
 
                 <ImageButton
                     android:id="@+id/topMainMenuProfileButton"
                     style="@style/menu_icons"
-                    android:src="@drawable/gear" />
+                    android:src="@drawable/settings" />
 
             </LinearLayout>
 
