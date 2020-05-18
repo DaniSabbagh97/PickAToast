@@ -23,14 +23,7 @@ public class MenuTests2 extends AppCompatActivity implements TopMainMenuImpl {
         setContentView(R.layout.menu_test2);
 
         leftMenu=findViewById(R.id.leftMenu);
-        btn=findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(MenuTests2.this,RegristroEmpleado.class);
-                startActivity(i);
-            }
-        });
+
     }
 
     @Override

@@ -2,82 +2,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/backgroundImage"
     tools:context=".RegristroEmpleado">
 
-    <EditText
-        android:id="@+id/etContraseña"
-        android:layout_width="296dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="336dp"
-        android:background="@drawable/texto_redondo"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/et_contraseña"
-        android:inputType="textPassword"
-        android:textColor="@color/color_textview_font"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/etVerificarContraseña"
-        android:layout_width="296dp"
-        android:layout_height="46dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="269dp"
-        android:background="@drawable/texto_redondo"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/et_verificar_correo"
-        android:inputType="textPassword"
-        android:textColor="@color/color_textview_font"
-        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnRegistrarEmpleado"
-        android:layout_width="242dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="72dp"
-        android:background="@drawable/boton_redondo"
         android:text="@string/btn_registro_uno"
-        android:textColor="@color/color_font"
-        android:textSize="24sp" />
+        style="@style/YellowButton" />
+
+    <EditText
+        android:id="@+id/etVerificarContraseña"
+        android:layout_marginBottom="270dp"
+        android:hint="@string/et_verificar_correo"
+        style="@style/loginEditText" />
+
+    <EditText
+        android:id="@+id/etContraseña"
+        android:layout_marginBottom="336dp"
+        android:hint="@string/et_contraseña"
+        style="@style/loginEditText" />
 
     <EditText
         android:id="@+id/etCorreo"
-        android:layout_width="295dp"
-        android:layout_height="46dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="70dp"
         android:layout_marginBottom="402dp"
-        android:background="@drawable/texto_redondo"
-        android:ems="10"
-        android:gravity="center"
         android:hint="@string/tv_correo"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/color_textview_font" />
+        style="@style/loginEditText" />
 
     <TextView
         android:id="@+id/tvPaso1"
         android:layout_width="194dp"
-        android:layout_height="78dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="581dp"
-        android:gravity="center"
+        android:layout_height="100dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="470dp"
         android:text="@string/tv_paso_uno"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@color/color_font"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        style="@style/titleBodoni" />
 
 </RelativeLayout>

@@ -5,7 +5,7 @@
     <string name="et_contraseña">Introduce tu contraseña</string>
     <string name="et_verificar_correo">Introduce de nuevo tu contraseña</string>
     <string name="et_nombre">Introduce el nombre</string>
-    <string name="tv_paso_uno">Paso 1</string>
+    <string name="tv_paso_uno">Crea tu cuenta</string>
     <string name="btn_registro_uno">¡Vamos!</string>
     <string name="et_localidad">Localidad</string>
     <string name="et_oficio">Oficio</string>
@@ -13,6 +13,13 @@
     <string name="CLAVE_CORREO">CLAVE CORREO</string>
     <string name="btn_registro">Registrarse</string>
     <string name="btn_login">Log in</string>
+    <string name="nombre_empresa">Introduce el nombre de la empresa</string>
+    <string name="localidad_empresa">Introduce la localidad de la empresa</string>
+    <string name="direccion_empresa">Introduce la direccion de la empresa</string>
+    <string name="btn_cam_img_empleador">Cambiar Imagen</string>
+    <string name="btn_editar_empleador">Editar Datos</string>
+    <string name="btn_guardar_empleador">Guardar</string>
+    <string name="btn_cambiar_contraseña">Borrar Perfil</string>
 
 
     <!--Descripcion de ImageButtons para que no lo de como error-->

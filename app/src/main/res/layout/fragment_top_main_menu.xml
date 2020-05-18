@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,36 +12,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brown"
+        android:background="@drawable/shadow_top_menu"
         android:orientation="horizontal"
         android:weightSum="1"
 >
 
         <ImageButton
             android:id="@+id/topMainMenuSideMenuButton"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:src="@android:drawable/ic_menu_sort_by_size"
             android:contentDescription="@string/topMainMenuSideMenuButtonDesc"
-           />
+            android:src="@drawable/menu"
+            style="@style/icons_buttons"/>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="end">
-            <ImageButton
-                android:id="@+id/topMainMenuNotificationButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@android:drawable/ic_popup_reminder"
-                android:contentDescription="@string/topMainMenuNotificationButtonDesc"
-                />
 
             <ImageButton
+                android:id="@+id/topMainMenuNotificationButton"
+                style="@style/icons_buttons"
+                android:layout_width="60dp"
+                android:contentDescription="@string/topMainMenuNotificationButtonDesc"
+                android:rotation="20"
+                android:src="@drawable/bell2" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/topMainMenuProfileButton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/fui_ic_anonymous_white_24dp"
-                android:contentDescription="@string/topMainMenuProfileButtonDesc"/>
+                android:background="@drawable/round_button_profile"
+                android:contentDescription="@string/topMainMenuProfileButtonDesc"
+                android:padding="5dp"
+                android:src="@drawable/profile_girl" />
+
         </LinearLayout>
 
 
