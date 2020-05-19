@@ -1,12 +1,16 @@
 package com.example.pickatoast.pickatoast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.pickatoast.pickatoast.Adapters.CardListEventsAdapter;
 import com.example.pickatoast.pickatoast.Fragments.LeftMainMenu;
@@ -14,8 +18,13 @@ import com.example.pickatoast.pickatoast.Fragments.TopMainMenu;
 import com.example.pickatoast.pickatoast.Interfaces.TopMainMenuImpl;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.Services.MenuButtonsHandler;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
     //------Variables de los fragments menu------
@@ -25,16 +34,26 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
     MenuButtonsHandler buttonsHandler;
 
     RecyclerView rv;
-    ArrayList<OfertaEmpleador> _ofertas;
+    List<OfertaEmpleador> _ofertas;
     CardListEventsAdapter adapter;
+    Button btnCrearEvento;
 
-    private String xxx;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_events_list );
+
+        btnCrearEvento = (Button) findViewById(R.id.btnCrearEvento);
+
+        btnCrearEvento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(EventsList.this, CreateEvent.class);
+                startActivity(i);
+            }
+        });
 
         //------Configuración de los Fragments menu------
         buttonsHandler= new MenuButtonsHandler(this);
@@ -44,11 +63,34 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
         rv = findViewById( R.id.rvEvents );
         rv.setLayoutManager( new LinearLayoutManager( this ) );
 
-        _ofertas = new ArrayList<>(  );
+        _ofertas = new ArrayList<>();
 
-        adapter = new CardListEventsAdapter( _ofertas, this );
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        adapter = new CardListEventsAdapter(_ofertas);
 
         rv.setAdapter( adapter );
+
+        database.getReference().child("Ofertas").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                _ofertas.removeAll(_ofertas);
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    OfertaEmpleador ofertaEmpleador = snapshot.getValue(OfertaEmpleador.class);
+                    _ofertas.add(ofertaEmpleador);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
 
         adapter.notifyDataSetChanged();
 
