@@ -45,22 +45,22 @@
         android:text="Lista de Eventos"
         android:textSize="36sp" />
 
-    <ScrollView
-        android:id="@+id/scrollCentersList"
-        android:layout_width="match_parent"
-        android:layout_height="519dp"
-        android:layout_above="@+id/llbotones"
-        android:layout_below="@+id/centersLayoutTitle"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="123dp">
+            <ScrollView
+                android:id="@+id/scrollCentersList"
+                android:layout_width="match_parent"
+                android:layout_height="378dp"
+                android:layout_above="@+id/llbotones"
+                android:layout_below="@+id/centersLayoutTitle"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="123dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvEvents"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="8dp"
 
                     />
             </ScrollView>
