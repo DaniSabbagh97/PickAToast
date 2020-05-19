@@ -28,6 +28,7 @@
         android:layout_marginBottom="261dp"
         android:ems="10"
         android:hint="Correo"
+        android:textSize="24sp"
         android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="77dp"
         tools:layout_editor_absoluteY="424dp" />
@@ -44,6 +45,7 @@
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
+        android:textSize="24sp"
         tools:layout_editor_absoluteX="77dp"
         tools:layout_editor_absoluteY="483dp" />
 
@@ -58,7 +60,8 @@
         android:layout_marginBottom="100dp"
         android:text="Iniciar sesión"
         tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="613dp" />
+        tools:layout_editor_absoluteY="613dp"
+        />
 
 
 </RelativeLayout>

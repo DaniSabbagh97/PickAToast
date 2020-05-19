@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/btnRegistrarEmpleado"
-        android:text="@string/btn_registro_uno"
-        style="@style/YellowButton" />
+        style="@style/YellowButton"
+        android:text="@string/btn_registro_uno" />
 
     <EditText
         android:id="@+id/etVerificarContraseña"
@@ -17,6 +17,7 @@
         android:hint="@string/et_verificar_correo"
         android:layout_width="300dp"
         android:layout_height="45dp"
+        android:textSize="18dp"
         style="@style/loginEditText" />
 
     <EditText
