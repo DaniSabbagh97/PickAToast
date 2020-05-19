@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pickatoast.pickatoast.MenuTests2;
 import com.example.pickatoast.pickatoast.R;
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.example.pickatoast.pickatoast.Services.XmlAnimationService;
 
 public class SplashActivity extends AppCompatActivity  {
@@ -46,9 +47,7 @@ public class SplashActivity extends AppCompatActivity  {
             public void run() {
 
                 //Cambiar segun a la activity  a a la que quieres que te lleve la animacion
-                Intent guestActivity = new Intent(context, EventsList.class);
-                startActivity(guestActivity);
-                finish();
+                ChangeWindowService.jumpTo(context,EventsList.class);
 
             }
         };
