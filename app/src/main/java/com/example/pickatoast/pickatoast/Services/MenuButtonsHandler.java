@@ -52,11 +52,12 @@ public class MenuButtonsHandler {
              jumpToProfile();
         }
     }
+
+
     private void leftMenuAnimation(int Animation, FrameLayout frameMenu){
         XmlAnimationService xmlAnimationService = new XmlAnimationService(context);
         xmlAnimationService.runAnimation(frameMenu,Animation);
     }
-
     private void jumpToProfile(){
           /* Intent guestActivity = new Intent(context, MenuTests2.class);
                 startActivity(guestActivity);

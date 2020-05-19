@@ -25,19 +25,29 @@ tools:context=".Fragments.LeftMainMenu">
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/topMainMenuSideMenuButtonIcon"
+                    android:id="@+id/topMainMenuHomeButtonIcon"
                     android:layout_marginTop="200dp"
                     android:src="@drawable/user"
                     android:paddingLeft="16dp"
                     style="@style/menu_icons" />
 
                 <ImageButton
-                    android:id="@+id/topMainMenuNotificationButtonIcon"
+                    android:id="@+id/topMainMenuProfileButtonIcon"
                     style="@style/menu_icons"
                     android:src="@drawable/bell_light" />
 
                 <ImageButton
-                    android:id="@+id/topMainMenuProfileButtonIcon"
+                    android:id="@+id/topMainMenuSettingsButtonIcon"
+                    style="@style/menu_icons"
+                    android:src="@drawable/settings" />
+
+                <ImageButton
+                    android:id="@+id/topMainMenuInfoButtonIcon"
+                    style="@style/menu_icons"
+                    android:src="@drawable/settings" />
+
+                <ImageButton
+                    android:id="@+id/topMainMenuCloseSessionButtonIcon"
                     style="@style/menu_icons"
                     android:src="@drawable/settings" />
 
@@ -50,24 +60,36 @@ tools:context=".Fragments.LeftMainMenu">
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/topMainMenuSideMenuButton"
+                    android:id="@+id/topMainMenuHomeButton"
                     android:layout_marginTop="200dp"
-                    android:text="Usuario"
+                    android:text="Inicio"
                     style="@style/menu_options" />
-
-                <Button
-                    android:id="@+id/topMainMenuNotificationButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    style="@style/menu_options"
-                    android:text="Notificaciones" />
 
                 <Button
                     android:id="@+id/topMainMenuProfileButton"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     style="@style/menu_options"
+                    android:text="Cuenta" />
+
+                <Button
+                    android:id="@+id/topMainMenuSettingsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/menu_options"
                     android:text="Ajustes" />
+                <Button
+                    android:id="@+id/topMainMenuInfoButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/menu_options"
+                    android:text="Información" />
+                <Button
+                    android:id="@+id/topMainMenuCloseSessionButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/menu_options"
+                    android:text="Cerrar sesion" />
 
             </LinearLayout>
         </LinearLayout>
