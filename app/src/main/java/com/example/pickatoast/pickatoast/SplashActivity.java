@@ -47,7 +47,7 @@ public class SplashActivity extends AppCompatActivity  {
             public void run() {
 
                 //Cambiar segun a la activity  a a la que quieres que te lleve la animacion
-                ChangeWindowService.jumpTo(context,EventsList.class);
+                ChangeWindowService.jumpTo(context,RegristroEmpleado.class);
 
             }
         };

@@ -26,15 +26,15 @@ tools:context=".Fragments.LeftMainMenu">
 
                 <ImageButton
                     android:id="@+id/topMainMenuHomeButtonIcon"
-                    android:layout_marginTop="200dp"
-                    android:src="@drawable/user"
-                    android:paddingLeft="16dp"
+                    android:layout_marginTop="120dp"
+                    android:src="@drawable/home"
                     style="@style/menu_icons" />
 
                 <ImageButton
                     android:id="@+id/topMainMenuProfileButtonIcon"
                     style="@style/menu_icons"
-                    android:src="@drawable/bell_light" />
+                    android:src="@drawable/user"
+                    android:paddingLeft="16dp" />
 
                 <ImageButton
                     android:id="@+id/topMainMenuSettingsButtonIcon"
@@ -44,24 +44,25 @@ tools:context=".Fragments.LeftMainMenu">
                 <ImageButton
                     android:id="@+id/topMainMenuInfoButtonIcon"
                     style="@style/menu_icons"
-                    android:src="@drawable/settings" />
+                    android:src="@drawable/info" />
 
                 <ImageButton
                     android:id="@+id/topMainMenuCloseSessionButtonIcon"
                     style="@style/menu_icons"
-                    android:src="@drawable/settings" />
+                    android:src="@drawable/log_out"
+                    android:paddingLeft="16dp"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
-
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="center">
 
                 <Button
                     android:id="@+id/topMainMenuHomeButton"
-                    android:layout_marginTop="200dp"
+                    android:layout_marginTop="120dp"
                     android:text="Inicio"
                     style="@style/menu_options" />
 
