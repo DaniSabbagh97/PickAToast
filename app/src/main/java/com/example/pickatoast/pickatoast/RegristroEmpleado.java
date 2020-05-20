@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -39,6 +40,8 @@ public class RegristroEmpleado extends AppCompatActivity {
     String nombre;
 
     Empleado empleado;
+    private FirebaseAuth mAuth;
+    FirebaseUser user;
 
 
     @Override
@@ -56,6 +59,7 @@ public class RegristroEmpleado extends AppCompatActivity {
 
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child( "Users" );
+        mAuth=FirebaseAuth.getInstance();
 
         progressDialog = new ProgressDialog( this );
 
@@ -88,6 +92,24 @@ public class RegristroEmpleado extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     //checking if success
                                     if(task.isSuccessful()){
+                                        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                                if (task.isSuccessful()){
+                                                    user=mAuth.getCurrentUser();
+                                                    String clave=user.getUid();
+                                                    Intent intent2=new Intent(RegristroEmpleado.this, RegistroEmpleado2.class);
+                                                    intent2.putExtra("CLAVE CORREO EMP", email);
+                                                    intent2.putExtra("CLAVE ID EMP", clave);
+                                                    intent2.putExtra("CLAVE CONTRASEÑA EMP", password);
+
+                                                    startActivity(intent2);
+                                                    Toast.makeText(RegristroEmpleado.this,"Todo good", Toast.LENGTH_LONG).show();
+                                                }else{
+                                                    Toast.makeText(RegristroEmpleado.this,"Fallo wey", Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+                                        });
 
                                         Toast.makeText(RegristroEmpleado.this,"Se ha registrado el usuario",Toast.LENGTH_LONG).show();
                                     }else{
@@ -98,9 +120,6 @@ public class RegristroEmpleado extends AppCompatActivity {
                                     progressDialog.dismiss();
                                 }
                             });
-                    Intent intent=new Intent(RegristroEmpleado.this, RegistroEmpleado2.class);
-                    intent.putExtra("CLAVE CORREO", email);
-                    startActivity(intent);
 
                 }
 

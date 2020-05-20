@@ -51,21 +51,34 @@
         android:text="@string/btn_cambiar_contraseña" />
 
     <Button
-        android:id="@+id/btnEditarEmpleador"
+        android:id="@+id/btnContraseñaEmpleador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="97dp"
-        android:text="@string/btn_editar_empleador" />
+        android:text="Cambiar Contraseña" />
 
     <Button
         android:id="@+id/btnCambiarImagenEmpleador"
-        android:layout_width="match_parent"
+        android:layout_width="207dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="146dp"
+        android:layout_marginEnd="204dp"
+        android:layout_marginBottom="145dp"
         android:enabled="true"
         android:text="@string/btn_cam_img_empleador" />
+
+    <Button
+        android:id="@+id/btnCambiarImagenEmpleador2"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="145dp"
+        android:enabled="true"
+        android:text="Hacer Foto" />
 
     <Button
         android:id="@+id/btnGuardarEmpelador"
