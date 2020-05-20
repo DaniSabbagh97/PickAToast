@@ -100,7 +100,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
     //Gestión de los botones de los fragments
     @Override
     public void menu(int buttonClicked,String fragmentName) {
-        Toast.makeText(this,"El boton pulsado es el: "+buttonClicked,Toast.LENGTH_SHORT).show();
+
         if(fragmentName.equals(leftFragmentName)){
             buttonsHandler.onLeftMenuButtonClicked(buttonClicked,leftMenu,leftFragmentName);
         }

@@ -8,32 +8,35 @@
 
     <Button
         android:id="@+id/btnRegistrarEmpleado"
-        android:text="@string/btn_registro_uno"
-        style="@style/YellowButton" />
+        style="@style/YellowButton"
+        android:text="@string/btn_registro_uno" />
 
     <EditText
         android:id="@+id/etVerificarContraseña"
-        android:layout_marginBottom="270dp"
         android:hint="@string/et_verificar_correo"
+        android:layout_marginBottom="270dp"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        style="@style/loginEditText" />
+        android:textSize="18dp"
+        style="@style/loginEditText"
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/etContraseña"
-        android:layout_marginBottom="336dp"
         android:hint="@string/et_contraseña"
+        android:layout_marginBottom="336dp"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        style="@style/loginEditText" />
+        style="@style/loginEditText"
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/etCorreo"
         android:layout_marginBottom="402dp"
-        android:hint="@string/tv_correo"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        style="@style/loginEditText" />
+        style="@style/loginEditText"
+        android:hint="@string/tv_correo"/>
 
     <TextView
         android:id="@+id/tvPaso1"

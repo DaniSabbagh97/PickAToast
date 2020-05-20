@@ -1,11 +1,9 @@
 package com.example.pickatoast.pickatoast.Services;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.example.pickatoast.pickatoast.MenuTests2;
 import com.example.pickatoast.pickatoast.R;
 
 public class MenuButtonsHandler {
@@ -16,20 +14,30 @@ public class MenuButtonsHandler {
 
      public void onLeftMenuButtonClicked(int buttonClicked, FrameLayout frameMenu, String fragmentName){
          switch (buttonClicked){
+             //BOTON INICIO
              case 0:
-                 jumpToProfile();
+                // ChangeWindowService.jumpTo(context, SplashActivity.class);
 
                  break;
+             //BOTON PERFIL
              case 1:
-                 notifications();
-                 break;
-             case 2:
 
+                 // ChangeWindowService.jumpTo(context, SplashActivity.class);
+                 break;
+             //BOTON AJUSTES
+             case 2:
+                 break;
+             //BOTON InFO
+             case 3:
+                 break;
+             //BOTON CERRAR SESION
+             case 4:
                  break;
          }
      }
     public void onTopMenuButtonClicked(int buttonClicked,FrameLayout leftMenu, String fragmentName){
         switch (buttonClicked){
+            //BOTON MENU LATERAL
             case 0:
                 leftMenu.setEnabled(!leftMenu.isEnabled());
                 if(leftMenu.getVisibility()== View.VISIBLE)
@@ -43,34 +51,25 @@ public class MenuButtonsHandler {
 
                 }
                 break;
+            //BOTON INICIO
             case 1:
-                //TODO funcionalidad de notificaciones
-                notifications();
+
+               // ChangeWindowService.jumpTo(context, SplashActivity.class);
                 break;
+            //BOTON PERFIL
             case 2:
-                //TODO intent para ir al perfil
-             jumpToProfile();
+                break;
+
+
+
         }
     }
+
+
     private void leftMenuAnimation(int Animation, FrameLayout frameMenu){
         XmlAnimationService xmlAnimationService = new XmlAnimationService(context);
         xmlAnimationService.runAnimation(frameMenu,Animation);
     }
 
-    private void jumpToProfile(){
-          /* Intent guestActivity = new Intent(context, MenuTests2.class);
-                startActivity(guestActivity);
-                finish();
-                break;*/
-    }
-    private void jumpToSettings(){
-        /* Intent guestActivity = new Intent(context, MenuTests2.class);
-                startActivity(guestActivity);
-                finish();
-                break;*/
-    }
-    //TODO llamada a las notificaciones
-    private void notifications(){
 
-    }
 }

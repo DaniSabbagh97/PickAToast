@@ -22,12 +22,16 @@ public class LeftMainMenu extends Fragment {
 
     private String fragmentName = this.getClass().getSimpleName();
     //Botones del menu
-    private final int[] MENUICONBUTTONS={R.id.topMainMenuSideMenuButtonIcon,
-            R.id.topMainMenuNotificationButtonIcon,
-            R.id.topMainMenuProfileButtonIcon};
-    private final int[] MENUBUTTONS={R.id.topMainMenuSideMenuButton,
-            R.id.topMainMenuNotificationButton,
-            R.id.topMainMenuProfileButton};
+    private final int[] MENUICONBUTTONS={R.id.topMainMenuHomeButtonIcon,
+            R.id.topMainMenuProfileButtonIcon,
+            R.id.topMainMenuSettingsButtonIcon,
+            R.id.topMainMenuInfoButtonIcon,
+            R.id.topMainMenuCloseSessionButtonIcon};
+    private final int[] MENUBUTTONS={R.id.topMainMenuHomeButton,
+            R.id.topMainMenuProfileButton,
+            R.id.topMainMenuSettingsButton,
+            R.id.topMainMenuInfoButton,
+            R.id.topMainMenuCloseSessionButton};
 
     public LeftMainMenu() {
         // Required empty public constructor
@@ -40,6 +44,7 @@ public class LeftMainMenu extends Fragment {
         // Inflate the layout for this fragment
         View menu = inflater.inflate(R.layout.fragment_left_main_menu, container, false);
 
+        menu.setVisibility(View.INVISIBLE);
 
 
 
@@ -64,6 +69,12 @@ public class LeftMainMenu extends Fragment {
             setOnClickOfButtons(menuButton,numberOfButtonPressed);
         }
         return menu;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
     }
 
     //Esto permite identificar automaticamente la actividad en la que nos encontramos al pulsar el boton
