@@ -18,6 +18,8 @@ import com.example.pickatoast.pickatoast.Fragments.TopMainMenu;
 import com.example.pickatoast.pickatoast.Interfaces.TopMainMenuImpl;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.Services.MenuButtonsHandler;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -37,6 +39,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
     List<OfertaEmpleador> _ofertas;
     CardListEventsAdapter adapter;
     Button btnCrearEvento;
+    FloatingActionButton fab;
 
 
 
@@ -55,6 +58,16 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
             }
         });
 
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                //TODO ACCTION FLOAT BUTTON
+            }
+        });
+
         //------Configuración de los Fragments menu------
         buttonsHandler= new MenuButtonsHandler(this);
         leftMenu=findViewById(R.id.leftMenu);
@@ -67,7 +80,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        adapter = new CardListEventsAdapter(_ofertas);
+        adapter = new CardListEventsAdapter(_ofertas, this);
 
         rv.setAdapter( adapter );
 

@@ -63,5 +63,15 @@
         tools:layout_editor_absoluteY="613dp"
         />
 
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="47dp"
+        android:text="¿No tienes cuenta? Registrate!" />
+
 
 </RelativeLayout>

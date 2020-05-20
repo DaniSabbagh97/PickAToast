@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pickatoast.pickatoast.MenuTests2;
 import com.example.pickatoast.pickatoast.R;
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.example.pickatoast.pickatoast.Services.XmlAnimationService;
 
 public class SplashActivity extends AppCompatActivity  {

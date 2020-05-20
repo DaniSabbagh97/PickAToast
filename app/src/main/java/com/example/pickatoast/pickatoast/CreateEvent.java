@@ -56,8 +56,11 @@ public class CreateEvent extends AppCompatActivity {
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
-    private FirebaseAuth mAuth;
-    private FirebaseUser user;
+   // private FirebaseAuth mAuth;
+   //
+    // private FirebaseUser user;
+
+    private String clave;
 
     Uri imagenUri;
 
@@ -78,6 +81,13 @@ public class CreateEvent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
+
+        Bundle bun = getIntent().getExtras();
+        if (bun == null) {
+            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        }else{
+            clave = bun.getString("clave");
+        }
 
         etNombre = (EditText) findViewById(R.id.etNombreOferta);
         etRestaurante = (EditText) findViewById(R.id.etRestaurante);
@@ -117,9 +127,9 @@ public class CreateEvent extends AppCompatActivity {
 
     private void saveData() {
 
-        // user = mAuth.getCurrentUser();
-        //String clave = user.getUid();
-        String clave = "clave";
+        //user=mAuth.getCurrentUser();
+
+        //String clave = "clave";
         oferta = new OfertaEmpleador(clave, nombreOferta, descripcionOferta, nombreRestaurante, localizacionRestaurante, duracionOferta, url, true);
         mDatabaseRef.child(clave).setValue(oferta);
 

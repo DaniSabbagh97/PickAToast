@@ -1,7 +1,8 @@
 package com.example.pickatoast.pickatoast.Adapters;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+import com.example.pickatoast.pickatoast.ViewSingleEvent;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -30,14 +24,17 @@ import java.util.List;
 public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAdapter.CardEventsViewHolder> {
 
     List<OfertaEmpleador> mOferta;
+    Intent intent;
+    Activity activity;
 
 
 
 
-    String nombre, descripcion, foto;
+    String nombre, restaurante, foto, id, duracion, localizacion;
 
-    public CardListEventsAdapter(List<OfertaEmpleador> mOfertas) {
+    public CardListEventsAdapter(List<OfertaEmpleador> mOfertas, Activity activity) {
         this.mOferta = mOfertas;
+        this.activity = activity;
     }
 
 
@@ -55,18 +52,20 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
         OfertaEmpleador ofertaEmpleador = mOferta.get( position );
 
         nombre = ofertaEmpleador.getNombreOferta();
-        descripcion = ofertaEmpleador.getDescripcionOferta();
+        restaurante = ofertaEmpleador.getRestaurante();
         foto = ofertaEmpleador.getLinkImagen();
+        id = ofertaEmpleador.getId();
+        localizacion = ofertaEmpleador.getLocalizacionOferta();
 
         holder.tvNombre.setText( nombre );
-        holder.tvDescripcion.setText( descripcion );
+        holder.tvDescripcion.setText( restaurante );
         Picasso.get().load( foto ).into(holder.ivOferta);
         //TODO Colocar aqui cada oferta para que se recoja de firebase
 
         holder.btnApuntarse.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO boton apuntarse
+              changeWindowTo(ViewSingleEvent.class, id, foto, nombre, duracion, localizacion, restaurante);
             }
         } );
 
@@ -79,6 +78,20 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
 
 
     }
+
+    void changeWindowTo(Class goTo, String idUser, String foto, String nombre, String duracion, String localizacion, String restaurante){
+        intent = new Intent(activity,goTo);
+        intent.putExtra("idOferta", idUser);
+        intent.putExtra("foto", foto);
+        intent.putExtra("nombre", nombre);
+        intent.putExtra("duracion", duracion);
+        intent.putExtra("localizacion", localizacion);
+        intent.putExtra("restaurante", restaurante);
+        activity.startActivity(intent);
+
+    }
+
+
 
     @Override
     public int getItemCount() {
@@ -99,7 +112,7 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
             tvNombre = itemView.findViewById( R.id.tvNombre );
             tvDescripcion = itemView.findViewById( R.id.tvDescripcion );
 
-            ivOferta = itemView.findViewById( R.id.ivOferta );
+            ivOferta = itemView.findViewById( R.id.ivImageOferta);
 
             btnApuntarse = itemView.findViewById( R.id.btnApuntarse );
 
@@ -107,31 +120,4 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
         }
     }
 
-    /*public void obtenerDatosOfertas() {
-        //user = FirebaseAuth.getInstance().getCurrentUser();
-
-
-        reference = FirebaseDatabase.getInstance().getReference("Ofertas").child( "clave");
-        final Query qq = reference;
-        qq.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    OfertaEmpleador of = dataSnapshot.getValue(OfertaEmpleador.class);
-                    //Comprobar si esta el itinerario
-                    mOferta.add(of);
-
-                //adapter.notifyDataSetChanged();
-                //TODO recuperar la imagen tambien
-
-
-                qq.removeEventListener(this);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }*/
 }
