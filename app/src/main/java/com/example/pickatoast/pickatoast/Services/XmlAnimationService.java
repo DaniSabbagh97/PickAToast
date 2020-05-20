@@ -9,17 +9,18 @@ import com.example.pickatoast.pickatoast.R;
 
 public class XmlAnimationService implements Animation.AnimationListener {
 
-    private Animation currentAnimation;
-    private int[] animationQueueArray;
-    private Context context;
-    private View targetView;
-    private int animationState=0;
+    private Animation currentAnimation; //Animacion actual
+    private int[] animationQueueArray; //Cola de animaciones
+    private Context context;    //Contexto de la actividad
+    private View targetView;    //Vista  a animar
+    private int animationState=0;   //Estado del array de animaciones
     private int animationStateMax=0;
 
     public XmlAnimationService(Context context) {
         this.context = context;
     }
 
+    //Para ejecutar una animación individual
    public void runAnimation(View view, int currentAnimation){
         setCurrentAnimation(currentAnimation);
         targetView=view;
@@ -27,6 +28,7 @@ public class XmlAnimationService implements Animation.AnimationListener {
         animationStateMax=0;
         view.startAnimation(this.currentAnimation);
    }
+   //Para ejecutar varias animaciones seguidas
    public void runAnimationArrayInOrder(View view, int[] currentAnimationArray){
         animationQueueArray= currentAnimationArray;
         targetView=view;
@@ -36,7 +38,7 @@ public class XmlAnimationService implements Animation.AnimationListener {
 
         view.startAnimation(currentAnimation);
    }
-
+    // Pasa a la siguiente animacion del array
    private void setNextAnimationOfTheArray(){
         setCurrentAnimation(animationQueueArray[animationState]);
    }
@@ -67,6 +69,8 @@ public class XmlAnimationService implements Animation.AnimationListener {
     public Animation getCurrentAnimation() {
         return currentAnimation;
     }
+
+    //Sobrecarga para permitir ints o animaciones
     public void setCurrentAnimation(Animation currentAnimation) {
         this.currentAnimation = currentAnimation;
         this.currentAnimation.setAnimationListener(this);

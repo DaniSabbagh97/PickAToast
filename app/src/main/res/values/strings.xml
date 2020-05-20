@@ -5,7 +5,7 @@
     <string name="et_contraseña">Introduce tu contraseña</string>
     <string name="et_verificar_correo">Introduce de nuevo tu contraseña</string>
     <string name="et_nombre">Introduce el nombre</string>
-    <string name="tv_paso_uno">Paso 1</string>
+    <string name="tv_paso_uno">Crea tu cuenta</string>
     <string name="btn_registro_uno">¡Vamos!</string>
     <string name="et_localidad">Localidad</string>
     <string name="et_oficio">Oficio</string>
@@ -35,4 +35,13 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_prueba_borrar">PruebaBorrar</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

@@ -16,15 +16,20 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
     EditText etContraseña;
     EditText etCorreo;
     Button btnLogin;
+    TextView tvRegister;
 
     private String password="";
     private String correo="";
+    private FirebaseUser user;
+
+
 
     private FirebaseAuth mAuth;
 
@@ -39,6 +44,16 @@ public class Login extends AppCompatActivity {
         etCorreo=findViewById(R.id.etCorreoLogin);
         btnLogin=findViewById(R.id.btnLogin);
 
+        tvRegister = findViewById(R.id.tvRegister);
+
+        tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, Registro.class);
+                startActivity(intent);
+            }
+        });
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +65,7 @@ public class Login extends AppCompatActivity {
                     logIn();
                 }
                 else{
-                    Toast.makeText(Login.this,"Comprueba que todos los campos esten rellenados", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this,"Comprueba que los campos no esten vacios", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -64,11 +79,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Intent intent2=new Intent(Login.this, EditarEmpleado.class);
+                    user = mAuth.getCurrentUser();
+                    String clave = user.getUid();
+                    Intent intent2=new Intent(Login.this, CreateEvent.class);
+                    intent2.putExtra("clave", clave);
                     startActivity(intent2);
-                    Toast.makeText(Login.this,"Todo good", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this,"Iniciando Sesión. . .", Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(Login.this,"Fallo wey", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this,"Usuario y/o Contraseña Incorrectos. . .", Toast.LENGTH_LONG).show();
                 }
             }
         });

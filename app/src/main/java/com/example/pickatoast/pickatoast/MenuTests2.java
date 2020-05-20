@@ -9,59 +9,43 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pickatoast.pickatoast.Fragments.LeftMainMenu;
+import com.example.pickatoast.pickatoast.Fragments.TopMainMenu;
 import com.example.pickatoast.pickatoast.Interfaces.TopMainMenuImpl;
+import com.example.pickatoast.pickatoast.Services.MenuButtonsHandler;
 import com.example.pickatoast.pickatoast.Services.XmlAnimationService;
 
 
 public class MenuTests2 extends AppCompatActivity implements TopMainMenuImpl {
     FrameLayout leftMenu;
+    String leftFragmentName = LeftMainMenu.class.getSimpleName();
+    String topFragmentName = TopMainMenu.class.getSimpleName();
 
-    Button btn;
+    MenuButtonsHandler buttonsHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView(R.layout.menu_test2);
 
+        buttonsHandler= new MenuButtonsHandler(this);
+
         leftMenu=findViewById(R.id.leftMenu);
-        btn=findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(MenuTests2.this,RegristroEmpleado.class);
-                startActivity(i);
-            }
-        });
+
+
     }
 
     @Override
-    public void menu(int buttonClicked) {
+    public void menu(int buttonClicked,String fragmentName) {
         Toast.makeText(this,"El boton pulsado es el: "+buttonClicked,Toast.LENGTH_SHORT).show();
-        switch (buttonClicked){
-            case 0:
-                leftMenu.setEnabled(!leftMenu.isEnabled());
-                if(leftMenu.getVisibility()==View.VISIBLE)
-                {
-                    leftMenu.setVisibility(View.INVISIBLE);
-                    leftMenuAnimation2();
-                }
-                else{
-                    leftMenuAnimation();
-                    leftMenu.setVisibility(View.VISIBLE);
-
-                }
-
-                break;
+        if(fragmentName.equals(leftFragmentName)){
+            buttonsHandler.onLeftMenuButtonClicked(buttonClicked,leftMenu,leftFragmentName);
+        }
+       else if(fragmentName.equals(topFragmentName)){
+            buttonsHandler.onTopMenuButtonClicked(buttonClicked,leftMenu,topFragmentName);
         }
     }
 
-    public void leftMenuAnimation(){
-        XmlAnimationService xmlAnimationService = new XmlAnimationService(this);
-        int[] animationArray ={R.anim.right_slice};
-        xmlAnimationService.runAnimationArrayInOrder(leftMenu,animationArray);
-    }
-    public void leftMenuAnimation2(){
-        XmlAnimationService xmlAnimationService = new XmlAnimationService(this);
-        int[] animationArray ={R.anim.left_slice};
-        xmlAnimationService.runAnimationArrayInOrder(leftMenu,animationArray);
-    }
+
+
 }

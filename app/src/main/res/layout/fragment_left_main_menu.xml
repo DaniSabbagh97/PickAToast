@@ -9,34 +9,90 @@ tools:context=".Fragments.LeftMainMenu">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="@color/brown"
+        android:background="@drawable/shadow_left_menu"
         android:orientation="vertical"
         android:weightSum="1"
         >
 
-        <ImageButton
-            android:id="@+id/topMainMenuSideMenuButton"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:src="@android:drawable/ic_menu_sort_by_size"
-            android:layout_marginTop="200dp"
-            />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginVertical="10dp">
-            <ImageButton
-                android:id="@+id/topMainMenuNotificationButton"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:src="@android:drawable/ic_popup_reminder" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/topMainMenuProfileButton"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:src="@drawable/fui_ic_anonymous_white_24dp" />
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/topMainMenuHomeButtonIcon"
+                    android:layout_marginTop="120dp"
+                    android:src="@drawable/home"
+                    style="@style/menu_icons" />
+
+                <ImageButton
+                    android:id="@+id/topMainMenuProfileButtonIcon"
+                    style="@style/menu_icons"
+                    android:src="@drawable/user"
+                    android:paddingLeft="16dp" />
+
+                <ImageButton
+                    android:id="@+id/topMainMenuSettingsButtonIcon"
+                    style="@style/menu_icons"
+                    android:src="@drawable/settings" />
+
+                <ImageButton
+                    android:id="@+id/topMainMenuInfoButtonIcon"
+                    style="@style/menu_icons"
+                    android:src="@drawable/info" />
+
+                <ImageButton
+                    android:id="@+id/topMainMenuCloseSessionButtonIcon"
+                    style="@style/menu_icons"
+                    android:src="@drawable/log_out"
+                    android:paddingLeft="16dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/topMainMenuHomeButton"
+                    android:layout_marginTop="120dp"
+                    android:text="Inicio"
+                    style="@style/menu_options" />
+
+                <Button
+                    android:id="@+id/topMainMenuProfileButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/menu_options"
+                    android:text="Cuenta" />
+
+                <Button
+                    android:id="@+id/topMainMenuSettingsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/menu_options"
+                    android:text="Ajustes" />
+                <Button
+                    android:id="@+id/topMainMenuInfoButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/menu_options"
+                    android:text="Información" />
+                <Button
+                    android:id="@+id/topMainMenuCloseSessionButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/menu_options"
+                    android:text="Cerrar sesion" />
+
+            </LinearLayout>
         </LinearLayout>
 
 

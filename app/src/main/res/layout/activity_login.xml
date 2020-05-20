@@ -4,37 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Login"
+    style="@style/backgroundImage">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="171dp"
+        android:layout_height="314dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="348dp"
+        app:srcCompat="@drawable/toast_logo" />
 
     <EditText
         android:id="@+id/etCorreoLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/loginEditText"
+        android:layout_width="257dp"
+        android:layout_height="44dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="261dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:hint="Correo"
+        android:textSize="24sp"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="424dp" />
 
     <EditText
         android:id="@+id/etPasswordLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/loginEditText"
+        android:layout_width="257dp"
+        android:layout_height="45dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="239dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="200dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="483dp" />
 
     <Button
         android:id="@+id/btnLogin"
+        style="@style/YellowButton"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="72dp"
-        android:text="Button" />
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="100dp"
+        android:text="Iniciar sesión"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="613dp"
+        />
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="253dp"
+        android:layout_height="52dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="47dp"
+        android:text="¿No tienes cuenta? Registrate!" />
+
+
 </RelativeLayout>

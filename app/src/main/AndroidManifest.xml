@@ -16,6 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".ViewSingleEvent" />
+        <activity android:name=".EventsList" />
+        <activity android:name=".CreateEvent" />
+        <activity android:name=".EditarEmpleador" />
         <activity android:name=".ChangePasswordEmpleado" />
         <activity android:name=".EditarEmpleado" />
         <activity
@@ -51,5 +55,12 @@
                 android:resource="@layout/provider_paths" />
         </provider>
     </application>
+    <uses-permission
+        android:name="android.hardware.Camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>
