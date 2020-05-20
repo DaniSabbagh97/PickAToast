@@ -8,26 +8,19 @@
 
     <EditText
         android:id="@+id/etNombreEmpleadorEd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginEnd="99dp"
         android:layout_marginBottom="415dp"
-        android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Nombre"
+        style="@style/profile_et" />
 
     <EditText
         android:id="@+id/etDireccionEmpleadorEd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="336dp"
-        android:ems="10"
+        style="@style/profile_et"
         android:inputType="textPersonName"
+
         android:text="Name" />
 
     <EditText
