@@ -58,15 +58,15 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
             }
         });
 
-        fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        //fab = findViewById(R.id.fab);
+        /*fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 //TODO ACCTION FLOAT BUTTON
             }
-        });
+        });*/
 
         //------Configuración de los Fragments menu------
         buttonsHandler= new MenuButtonsHandler(this);

@@ -2,7 +2,6 @@ package com.example.pickatoast.pickatoast.Adapters;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +55,7 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
         foto = ofertaEmpleador.getLinkImagen();
         id = ofertaEmpleador.getId();
         localizacion = ofertaEmpleador.getLocalizacionOferta();
+        duracion = ofertaEmpleador.getDuracionContrato();
 
         holder.tvNombre.setText( nombre );
         holder.tvDescripcion.setText( restaurante );
@@ -112,7 +112,7 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
             tvNombre = itemView.findViewById( R.id.tvNombre );
             tvDescripcion = itemView.findViewById( R.id.tvDescripcion );
 
-            ivOferta = itemView.findViewById( R.id.ivImageOferta);
+            ivOferta = itemView.findViewById( R.id.ivOferta);
 
             btnApuntarse = itemView.findViewById( R.id.btnApuntarse );
 

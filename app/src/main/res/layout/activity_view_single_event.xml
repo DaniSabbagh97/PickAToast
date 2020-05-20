@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     tools:context=".ViewSingleEvent">
 
@@ -10,7 +11,7 @@
     <TextView
         android:id="@+id/tvRestauranteOferta"
         android:layout_width="184dp"
-        android:layout_height="24dp"
+        android:layout_height="24sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -19,12 +20,12 @@
         android:layout_marginTop="482dp"
         android:layout_marginEnd="115dp"
         android:layout_marginBottom="225dp"
-        android:textSize="24dp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvDuracionOferta"
         android:layout_width="184dp"
-        android:layout_height="24dp"
+        android:layout_height="24sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -33,7 +34,7 @@
         android:layout_marginTop="538dp"
         android:layout_marginEnd="113dp"
         android:layout_marginBottom="169dp"
-        android:textSize="24dp" />
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/ivImagenOfertaIndividual"
@@ -47,7 +48,7 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="112dp"
         android:layout_marginBottom="413dp"
-        app:srcCompat="@drawable/boton_redondo" />
+        />
 
     <TextView
         android:id="@+id/tvNombreOferta"
@@ -61,7 +62,7 @@
         android:layout_marginTop="58dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="636dp"
-        android:textSize="24dp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvLocalizacionOferta"
@@ -75,7 +76,7 @@
         android:layout_marginTop="417dp"
         android:layout_marginEnd="114dp"
         android:layout_marginBottom="286dp"
-        android:textSize="24dp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnApuntarseOferta"
@@ -85,9 +86,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="640dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="63dp"
         android:text="¡Apuntante!" />
 </RelativeLayout>

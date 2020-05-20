@@ -25,26 +25,37 @@ public class ViewSingleEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_single_event);
 
+
+        tvNombreOferta = (TextView) findViewById(R.id.tvNombreOferta);
+        tvLocalizacionOferta = (TextView) findViewById(R.id.tvLocalizacionOferta);
+        tvDuracionOferta = (TextView) findViewById(R.id.tvDuracionOferta);
+        tvRestauranteOferta = (TextView) findViewById(R.id.tvRestauranteOferta);
+
+        ivOferta = (ImageView) findViewById(R.id.ivImagenOfertaIndividual);
+
+        btnApuntarseOferta = (Button) findViewById(R.id.btnApuntarseOferta);
+
         Bundle bundle = getIntent().getExtras();
         if(bundle==null){
             System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }else {
+
             id = bundle.getString("idOferta");
             nombre = bundle.getString("nombre");
             restaurante = bundle.getString("restaurante");
             foto = bundle.getString("foto");
             duracion = bundle.getString("duracion");
             localizacion = bundle.getString("localizacion");
+            System.out.println(id);
+            System.out.println(nombre);
+            System.out.println(foto);
+            System.out.println(duracion);
+            System.out.println(localizacion);
+            System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+
 
         }
-        tvNombreOferta = (TextView) findViewById(R.id.tvNombreOferta);
-        tvLocalizacionOferta = (TextView) findViewById(R.id.tvLocalizacionOferta);
-        tvDuracionOferta = (TextView) findViewById(R.id.tvDuracionOferta);
-        tvRestauranteOferta = (TextView) findViewById(R.id.tvRestauranteOferta);
 
-        ivOferta = (ImageView) findViewById(R.id.ivImageOferta);
-
-        btnApuntarseOferta = (Button) findViewById(R.id.btnApuntarseOferta);
 
         cargarDatos();
 
@@ -67,5 +78,6 @@ public class ViewSingleEvent extends AppCompatActivity {
         Picasso.get().load(foto).into(ivOferta);
 
     }
+
 
 }
