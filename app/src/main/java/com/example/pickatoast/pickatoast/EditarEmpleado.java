@@ -9,20 +9,16 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.pickatoast.pickatoast.Pojos.Empleado;
-import com.example.pickatoast.pickatoast.Pojos.Empleador;
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -186,6 +182,8 @@ public class EditarEmpleado extends AppCompatActivity {
 
 
                 databaseRef.child("Empleados").child(uid).setValue(datosEmpresa);
+
+                ChangeWindowService.jumpTo(EditarEmpleado.this,EventsList.class);
             }
         });
         btnCurriculum.setOnClickListener(new View.OnClickListener() {
