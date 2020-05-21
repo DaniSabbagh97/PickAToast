@@ -19,11 +19,8 @@
         <activity android:name=".ViewSingleEvent"  android:screenOrientation="portrait"/>
         <activity android:name=".EventsList"  android:screenOrientation="portrait"/>
         <activity android:name=".CreateEvent"  android:screenOrientation="portrait"/>
-        <activity android:name=".EditarEmpleador"  android:screenOrientation="portrait"/>
         <activity android:name=".EditarEmpleado"  android:screenOrientation="portrait"/>
-        <activity android:name=".RegistroEmpleador1"  android:screenOrientation="portrait"/>
         <activity android:name=".Login" android:screenOrientation="portrait"/>
-        <activity android:name=".RegistroEmpleador2"  android:screenOrientation="portrait"/>
         <activity android:name=".SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
