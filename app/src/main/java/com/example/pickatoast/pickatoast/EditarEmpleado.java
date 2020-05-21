@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.pickatoast.pickatoast.Pojos.Empleado;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -198,6 +199,8 @@ public class EditarEmpleado extends AppCompatActivity {
 
 
                 databaseRef.child("Empleados").child(uid).setValue(datosEmpresa);
+
+                ChangeWindowService.jumpTo(EditarEmpleado.this,EventsList.class);
             }
         });
         btnCurriculum.setOnClickListener(new View.OnClickListener() {

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -49,8 +51,7 @@ public class Login extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this, RegristroEmpleado.class);
-                startActivity(intent);
+                ChangeWindowService.jumpTo(Login.this,RegristroEmpleado.class);
             }
         });
 
@@ -81,7 +82,7 @@ public class Login extends AppCompatActivity {
                 if (task.isSuccessful()){
                     user = mAuth.getCurrentUser();
                     String clave = user.getUid();
-                    Intent intent2=new Intent(Login.this, EditarEmpleado.class);
+                    Intent intent2=new Intent(Login.this, EventsList.class);
                     intent2.putExtra("clave", clave);
                     intent2.putExtra("correo", correo);
                     intent2.putExtra("password", password);
