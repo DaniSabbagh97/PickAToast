@@ -37,6 +37,8 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
     List<OfertaEmpleador> _ofertas;
     CardListEventsAdapter adapter;
     Button btnCrearEvento;
+    String clave;
+
 
 
 
@@ -46,12 +48,20 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_events_list );
 
+        Bundle bun = getIntent().getExtras();
+        if (bun == null) {
+            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        }else{
+            clave = bun.getString("clave");
+        }
+
         btnCrearEvento = (Button) findViewById(R.id.btnCrearEvento);
 
         btnCrearEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(EventsList.this, CreateEvent.class);
+                i.putExtra("clave", clave);
                 startActivity(i);
             }
         });
