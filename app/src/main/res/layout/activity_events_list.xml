@@ -31,37 +31,17 @@
             android:background="@color/cream">
 
             <LinearLayout
-                android:id="@+id/llBotones"
-                android:layout_width="match_parent"
-                android:layout_height="656dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="30dp"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:weightSum="3">
-
-                <Button
-                    android:id="@+id/btnCrearEvento"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_weight="3"
-                    android:text="Crear Evento" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/layout_list"
                 android:layout_width="match_parent"
-                android:layout_height="669dp"
-                android:layout_gravity="bottom"
+                android:layout_height="595dp"
+                android:layout_gravity="top"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="168dp"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="20dp">
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/color_square"
@@ -76,17 +56,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
+                        android:paddingLeft="5dp"
                         android:text="Recomendado para ti"
                         android:textSize="24sp"
-                        android:paddingLeft="5dp"
 
-                       />
+                        />
                 </LinearLayout>
 
                 <ScrollView
                     android:id="@+id/scrollCentersList"
                     android:layout_width="match_parent"
-                    android:layout_height="519dp"
+                    android:layout_height="465dp"
                     android:layout_above="@+id/llbotones"
                     android:layout_below="@+id/centersLayoutTitle"
                     android:layout_alignParentBottom="true"
@@ -106,6 +86,27 @@
                     </androidx.recyclerview.widget.RecyclerView>
                 </ScrollView>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBotones"
+                android:layout_width="match_parent"
+                android:layout_height="177dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnCrearEvento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="3"
+                    android:text="Crear Evento" />
             </LinearLayout>
 
             <fragment
