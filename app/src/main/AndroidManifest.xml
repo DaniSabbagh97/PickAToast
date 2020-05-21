@@ -19,7 +19,6 @@
         <activity android:name=".ViewSingleEvent" />
         <activity android:name=".EventsList" />
         <activity android:name=".CreateEvent" />
-        <activity android:name=".EditarEmpleador" />
         <activity android:name=".ChangePasswordEmpleado" />
         <activity android:name=".EditarEmpleado" />
         <activity
