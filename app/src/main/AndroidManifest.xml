@@ -21,6 +21,7 @@
         <activity android:name=".CreateEvent"  android:screenOrientation="portrait"/>
         <activity android:name=".EditarEmpleado"  android:screenOrientation="portrait"/>
         <activity android:name=".Login" android:screenOrientation="portrait"/>
+        <activity android:name=".ChangePasswordEmpleado" />
         <activity android:name=".SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
