@@ -16,34 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ViewSingleEvent" />
-        <activity android:name=".EventsList" />
-        <activity android:name=".CreateEvent" />
-        <activity android:name=".EditarEmpleador" />
-        <activity android:name=".ChangePasswordEmpleado" />
-        <activity android:name=".EditarEmpleado" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".ChangePasswordEmpleador" />
-        <activity android:name=".EventsList" />
-        <activity android:name=".CreateEvent" />
-        <activity android:name=".EditarEmpleador" />
-        <activity android:name=".RegistroEmpleador1" />
-        <activity android:name=".Registro" />
-        <activity android:name=".Login" />
-        <activity android:name=".RegistroEmpleador2" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".ViewSingleEvent"  android:screenOrientation="portrait"/>
+        <activity android:name=".EventsList"  android:screenOrientation="portrait"/>
+        <activity android:name=".CreateEvent"  android:screenOrientation="portrait"/>
+        <activity android:name=".EditarEmpleado"  android:screenOrientation="portrait"/>
+        <activity android:name=".Login" android:screenOrientation="portrait"/>
+        <activity android:name=".SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegristroEmpleado" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".RegistroEmpleado2" />
-        <activity android:name=".MenuTests2" />
+        <activity android:name=".RegristroEmpleado"  android:screenOrientation="portrait"/>
+        <activity android:name=".RegistroEmpleado2"  android:screenOrientation="portrait"/>
+        <activity android:name=".MenuTests2"  android:screenOrientation="portrait"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

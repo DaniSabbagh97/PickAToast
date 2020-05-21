@@ -18,8 +18,6 @@ import com.example.pickatoast.pickatoast.Fragments.TopMainMenu;
 import com.example.pickatoast.pickatoast.Interfaces.TopMainMenuImpl;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.Services.MenuButtonsHandler;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -39,7 +37,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
     List<OfertaEmpleador> _ofertas;
     CardListEventsAdapter adapter;
     Button btnCrearEvento;
-    FloatingActionButton fab;
+
 
 
 
