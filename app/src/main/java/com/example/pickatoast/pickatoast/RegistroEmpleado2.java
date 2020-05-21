@@ -66,7 +66,7 @@ public class RegistroEmpleado2 extends AppCompatActivity {
 
                 Map<String, Object> datosUsuario= new HashMap<>();
 
-                datosUsuario.put("nombreEmpelado",nombre);
+                datosUsuario.put("nombreEmpleado",nombre);
                 datosUsuario.put("correoEmpleado", email);
                 datosUsuario.put("ciudadEmpleado", localidad);
                 datosUsuario.put("direccionEmpleado",direccion.getText().toString());
@@ -80,6 +80,9 @@ public class RegistroEmpleado2 extends AppCompatActivity {
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2
                 Toast.makeText(RegistroEmpleado2.this,"Su usuario ha sido registrado",Toast.LENGTH_LONG).show();
                 Intent intent2=new Intent(RegistroEmpleado2.this, EditarEmpleado.class);
+                intent2.putExtra("clave",uid);
+                intent2.putExtra("correo",email);
+                intent2.putExtra("password", contraseña);
                 startActivity(intent2);
             }
         });
