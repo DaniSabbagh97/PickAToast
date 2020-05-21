@@ -104,6 +104,7 @@ public class RegristroEmpleado extends AppCompatActivity {
                                                     intent2.putExtra("CLAVE CONTRASEÑA EMP", password);
 
                                                     startActivity(intent2);
+                                                    finish();
                                                     Toast.makeText(RegristroEmpleado.this,"Todo good", Toast.LENGTH_LONG).show();
                                                 }else{
                                                     Toast.makeText(RegristroEmpleado.this,"Fallo wey", Toast.LENGTH_LONG).show();
