@@ -11,12 +11,15 @@ public class Empleador {
     String direccionEmpleador;
     String imagenLogoEmpresaURL;
     String descripcionEmpleador;
+    String contraseñaEmpleador;
+    boolean esEmpelador;
     ArrayList<String> coleccionImagenesEmpresa;
     boolean buscaEmpleado;
     ArrayList<OfertaEmpleador> ofertaEmpleador;
 
     public Empleador(String id, String nombreEmpleado, String nombreEmpresa, String correoEmpleador, String ciudadEmpleador, String direccionEmpleador,
-                     String imagenLogoEmpresaURL, String descripcionEmpleador, ArrayList<String> coleccionImagenesEmpresa, boolean buscaEmpleado, ArrayList<OfertaEmpleador> ofertaEmpleador) {
+                     String imagenLogoEmpresaURL, String descripcionEmpleador, String contraseñaEmpleador, boolean esEmpelador,
+                     ArrayList<String> coleccionImagenesEmpresa, boolean buscaEmpleado, ArrayList<OfertaEmpleador> ofertaEmpleador) {
         this.id = id;
         this.nombreEmpleado = nombreEmpleado;
         this.nombreEmpresa = nombreEmpresa;
@@ -25,12 +28,30 @@ public class Empleador {
         this.direccionEmpleador = direccionEmpleador;
         this.imagenLogoEmpresaURL = imagenLogoEmpresaURL;
         this.descripcionEmpleador = descripcionEmpleador;
+        this.contraseñaEmpleador = contraseñaEmpleador;
+        this.esEmpelador = esEmpelador;
         this.coleccionImagenesEmpresa = coleccionImagenesEmpresa;
         this.buscaEmpleado = buscaEmpleado;
         this.ofertaEmpleador = ofertaEmpleador;
     }
 
     public Empleador() {
+    }
+
+    public String getContraseñaEmpleador() {
+        return contraseñaEmpleador;
+    }
+
+    public void setContraseñaEmpleador(String contraseñaEmpleador) {
+        this.contraseñaEmpleador = contraseñaEmpleador;
+    }
+
+    public boolean isEsEmpelador() {
+        return esEmpelador;
+    }
+
+    public void setEsEmpelador(boolean esEmpelador) {
+        this.esEmpelador = esEmpelador;
     }
 
     public String getId() {

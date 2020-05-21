@@ -82,7 +82,7 @@ public class Login extends AppCompatActivity {
                 if (task.isSuccessful()){
                     user = mAuth.getCurrentUser();
                     String clave = user.getUid();
-                    Intent intent2=new Intent(Login.this, CreateEvent.class);
+                    Intent intent2=new Intent(Login.this, EventsList.class);
                     intent2.putExtra("clave", clave);
                     startActivity(intent2);
                     Toast.makeText(Login.this,"Iniciando Sesión. . .", Toast.LENGTH_LONG).show();
