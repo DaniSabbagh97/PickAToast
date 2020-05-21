@@ -5,7 +5,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:layout_weight="1"
-    android:divider="@color/shade">
+    android:divider="@color/shade"
+    android:background="@drawable/list_background"
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/ivOferta"
@@ -55,8 +57,8 @@
                 android:layout_width="100dp"
                 android:layout_height="35dp"
                 android:layout_gravity="right"
+                android:background="@drawable/light_yellow"
                 android:text="Saber más"
-                android:textAlignment="center"
                 android:textSize="18dp" />
         </LinearLayout>
     </LinearLayout>

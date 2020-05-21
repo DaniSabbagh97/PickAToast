@@ -91,11 +91,11 @@
             <LinearLayout
                 android:id="@+id/llBotones"
                 android:layout_width="match_parent"
-                android:layout_height="177dp"
+                android:layout_height="92dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
                 android:layout_gravity="bottom"
-                android:layout_marginBottom="20dp"
+
                 android:orientation="horizontal"
                 android:paddingTop="20dp"
                 android:weightSum="3">
@@ -104,9 +104,14 @@
                     android:id="@+id/btnCrearEvento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
                     android:layout_weight="3"
-                    android:text="Crear Evento" />
+                    android:background="@drawable/event_button"
+                    android:text="Crear Evento"
+                    android:textSize="20dp"
+                    android:textColor="@color/brown"/>
+                <!--android:drawableTintMode="@drawable/home"-->
             </LinearLayout>
 
             <fragment

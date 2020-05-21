@@ -39,7 +39,7 @@
         <item name="elevation">3dp</item>
         <item name="textAllCaps">false</item>
         <item name="android:fontFamily">@font/segoui</item>
-        <!--<item name="android:fontFamily">@font/bodoni</item>-->
+
     </style>
 
     <style name="backgroundImage">

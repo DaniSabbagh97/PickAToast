@@ -17,5 +17,14 @@
 
             </shape>
         </item>
+        <item android:state_pressed="true">
+             <shape xmlns:android="http://schemas.android.com/apk/res/android"  >
+
+                 <solid android:color="#BBA9AB"></solid>
+                 <corners android:radius="20sp"></corners>
+            </shape>
+        </item>
+
+
     </selector>
 
