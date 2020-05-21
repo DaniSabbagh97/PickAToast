@@ -84,6 +84,8 @@ public class Login extends AppCompatActivity {
                     String clave = user.getUid();
                     Intent intent2=new Intent(Login.this, EventsList.class);
                     intent2.putExtra("clave", clave);
+                    intent2.putExtra("correo", correo);
+                    intent2.putExtra("password", password);
                     startActivity(intent2);
                     Toast.makeText(Login.this,"Iniciando Sesión. . .", Toast.LENGTH_LONG).show();
                 }else{

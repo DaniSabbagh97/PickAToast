@@ -16,10 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.pickatoast.pickatoast.Pojos.Empleado;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -54,6 +58,7 @@ public class EditarEmpleado extends AppCompatActivity {
     Empleado empleado;
     FirebaseAuth auth;
     private StorageReference mStorageRef;
+    private FirebaseAuth mAuth;
 
     Uri imagenUri;
     Uri cvUri;
@@ -68,11 +73,33 @@ public class EditarEmpleado extends AppCompatActivity {
     String RUTA_IMAGEN = CARPETA_RAIZ + CARPETAS_IMAGENES;
     String path;
     String image;
+    String clave;
+    String correo;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_empleado);
+
+        correo=getIntent().getExtras().getString("correo");
+        password=getIntent().getExtras().getString("password");
+        System.out.println(correo);
+        System.out.println(password);
+        mAuth=FirebaseAuth.getInstance();
+
+        mAuth.signInWithEmailAndPassword(correo,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+
+                    Toast.makeText(EditarEmpleado.this,"Iniciando Sesión. . .", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(EditarEmpleado.this,"Usuario y/o Contraseña Incorrectos. . .", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
 
         ciudadEmpleado=findViewById(R.id.etCiudadEmpleado);
         direccionEmpleado=findViewById(R.id.etDireccionEmpleado);
@@ -90,6 +117,15 @@ public class EditarEmpleado extends AppCompatActivity {
         databaseRef= FirebaseDatabase.getInstance().getReference();
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
+        if (user != null) {
+
+            uid = user.getUid();
+
+        } else {
+            Toast.makeText(EditarEmpleado.this,"Su usuario ha sido registrado",Toast.LENGTH_LONG).show();
+        }
+        System.out.println("--------------------------------"+uid);
+
         url="";
         urlCV="";
 
@@ -100,46 +136,27 @@ public class EditarEmpleado extends AppCompatActivity {
         }
 
 
-        if (user != null) {
-
-            uid = user.getUid();
-
-        } else {System.out.println("-------------------Cagada");}
 
         databaseRef.child("Empleados").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(final DataSnapshot snapshot: dataSnapshot.getChildren()){
-                    databaseRef.child("Empleados").child(snapshot.getKey()).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            firebase=snapshot.getValue(Empleado.class);
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    firebase = snapshot.getValue(Empleado.class);
+                    if(uid.equals(firebase.getIdEmpleado())){
+                        empleado=firebase;
+                        ciudadEmpleado.setText(firebase.getCiudadEmpleado());
+                        direccionEmpleado.setText(firebase.getDireccionEmpleado());
+                        trabajoEmpleado.setText(firebase.getOficioEmpleado());
+                        if(firebase.getImagenPerfilEmpleadoURL().equals("")){
 
-                            if(uid.equals(firebase.getIdEmpleado())){
-                                ciudadEmpleado.setText(firebase.getCiudadEmpleado());
-                                direccionEmpleado.setText(firebase.getDireccionEmpleado());
-                                trabajoEmpleado.setText(firebase.getOficioEmpleado());
-                                image=firebase.getImagenPerfilEmpleadoURL();
-                                if(firebase.getImagenPerfilEmpleadoURL().equals("")){
-
-                                }else{
-                                    Picasso.get().load(image).into(imgPerfil);
-                                }
-
-
-
-
-                                empleado=firebase;
-                            }
+                        }else{
+                            Picasso.get().load(firebase.getImagenPerfilEmpleadoURL()).into(imgPerfil);
                         }
+                    }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
 
                 }
+
             }
 
             @Override
@@ -170,13 +187,13 @@ public class EditarEmpleado extends AppCompatActivity {
 
 
                 datosEmpresa.put("nombreEmpresa",empleado.getNombreEmpleado());
-                datosEmpresa.put("correoEmpleador", empleado.getCorreoEmpleado());
-                datosEmpresa.put("ciudadEmpleador", ciudadEmpleado.getText().toString());
-                datosEmpresa.put("direccionEmpleador", direccionEmpleado.getText().toString());
+                datosEmpresa.put("correoEmpleado", empleado.getCorreoEmpleado());
+                datosEmpresa.put("ciudadEmpleado", ciudadEmpleado.getText().toString());
+                datosEmpresa.put("direccionEmpleado", direccionEmpleado.getText().toString());
                 datosEmpresa.put("id",uid);
-                datosEmpresa.put("imagenLogoEmpresaURL",url);
+                datosEmpresa.put("imagenPerfilEmpleadoURL",url);
                 datosEmpresa.put("esEmpleador",false);
-                datosEmpresa.put("contraseñaEmpleador",empleado.getContraseñaEmpleado());
+                datosEmpresa.put("contraseñaEmpleado",empleado.getContraseñaEmpleado());
                 datosEmpresa.put("subidaCurriculumURL",urlCV);
                 datosEmpresa.put("oficioEmpleado",trabajoEmpleado.getText().toString());
 
