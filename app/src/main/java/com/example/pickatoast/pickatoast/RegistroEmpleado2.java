@@ -23,9 +23,12 @@ public class RegistroEmpleado2 extends AppCompatActivity {
     EditText nombreEmpleado;
     EditText localidadEmpleado;
     EditText oficioEmpleado;
+    EditText direccion;
     Button btnRegistrar;
     String email;
     String nombre;
+    String clave;
+    String contraseña;
     FirebaseUser user;
     String uid;
 
@@ -38,8 +41,11 @@ public class RegistroEmpleado2 extends AppCompatActivity {
         nombreEmpleado=findViewById(R.id.etNombreEmpleado);
         localidadEmpleado=findViewById(R.id.etLocalidadRegistro);
         oficioEmpleado=findViewById(R.id.etOficioRegistro);
+        direccion=findViewById(R.id.etDireccionEmpeladoReg);
         btnRegistrar=findViewById(R.id.btnRegistrarEmpleado2);
-        email=getIntent().getExtras().getString("CLAVE CORREO");
+        email=getIntent().getExtras().getString("CLAVE CORREO EMP");
+        clave=getIntent().getExtras().getString("CLAVE ID EMP");
+        contraseña=getIntent().getExtras().getString("CLAVE CONTRASEÑA EMP");
         user=FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
@@ -60,16 +66,20 @@ public class RegistroEmpleado2 extends AppCompatActivity {
 
                 Map<String, Object> datosUsuario= new HashMap<>();
 
-                datosUsuario.put("nombre",nombre);
-                datosUsuario.put("correo", email);
-                datosUsuario.put("localidad", localidad);
-                datosUsuario.put("oficio", oficio);
-                datosUsuario.put("id",uid);
+                datosUsuario.put("nombreEmpelado",nombre);
+                datosUsuario.put("correoEmpleado", email);
+                datosUsuario.put("ciudadEmpleado", localidad);
+                datosUsuario.put("direccionEmpleado",direccion.getText().toString());
+                datosUsuario.put("oficioEmpleado", oficio);
+                datosUsuario.put("idEmpleado",clave);
+                datosUsuario.put("contraseñaEmpleado", contraseña);
+                datosUsuario.put("imagenPerfilEmpleadoURL","");
+                datosUsuario.put("subidaCurriculumURL","");
 
-                databaseRef.child(uid).setValue(datosUsuario);
+                databaseRef.child(clave).setValue(datosUsuario);
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2
                 Toast.makeText(RegistroEmpleado2.this,"Su usuario ha sido registrado",Toast.LENGTH_LONG).show();
-                Intent intent2=new Intent(RegistroEmpleado2.this, EventsList.class);
+                Intent intent2=new Intent(RegistroEmpleado2.this, EditarEmpleado.class);
                 startActivity(intent2);
             }
         });

@@ -26,6 +26,15 @@
     <string name="topMainMenuSideMenuButtonDesc">Hamburguer button to open the left menu</string>
     <string name="topMainMenuNotificationButtonDesc">Bell button to open the app´s notifications</string>
     <string name="topMainMenuProfileButtonDesc">User´s Picture button to open his profile</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
     <string name="title_activity_prueba_borrar">PruebaBorrar</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

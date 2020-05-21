@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditarEmpleado">
+
+    <EditText
+        android:id="@+id/etDireccionEmpleado"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="392dp"
+        android:ems="10"
+        android:hint="Introduce tu direccion"
+        android:inputType="textPersonName"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/etTrabajoEmpelado"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="344dp"
+        android:ems="10"
+        android:hint="Introduce tu trabajo en hosteleria"
+        android:inputType="textPersonName"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/etCiudadEmpleado"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="438dp"
+        android:ems="10"
+        android:hint="Introduce la ciudad donde vives"
+        android:inputType="textPersonName"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/imgImagenPerfilEmpleado"
+        android:layout_width="174dp"
+        android:layout_height="145dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="525dp"
+        app:srcCompat="@drawable/toast_logo"
+        />
+
+    <Button
+        android:id="@+id/btnGuardarEmpleado"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:text="@string/btn_guardar_empleador" />
+
+    <Button
+        android:id="@+id/btnCambiarContraseñaEmpleado"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="39dp"
+        android:text="Cambiar contraseña" />
+
+    <Button
+        android:id="@+id/btnCurriculumVitae"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="77dp"
+        android:text="Curriculum Vitae" />
+
+    <Button
+        android:id="@+id/btnCambiarImagen"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="115dp"
+        android:text="Cambiar imagen" />
+
+</RelativeLayout>

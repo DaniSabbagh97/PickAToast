@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this, EventsList.class);
+                Intent intent = new Intent(Login.this, Registro.class);
                 startActivity(intent);
             }
         });
@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
                 if (task.isSuccessful()){
                     user = mAuth.getCurrentUser();
                     String clave = user.getUid();
-                    Intent intent2=new Intent(Login.this, CreateEvent.class);
+                    Intent intent2=new Intent(Login.this, EventsList.class);
                     intent2.putExtra("clave", clave);
                     startActivity(intent2);
                     Toast.makeText(Login.this,"Iniciando Sesión. . .", Toast.LENGTH_LONG).show();

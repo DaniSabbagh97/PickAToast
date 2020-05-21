@@ -90,6 +90,7 @@ public class RegistroEmpleador1 extends AppCompatActivity {
                                                     Intent intent2=new Intent(RegistroEmpleador1.this, RegistroEmpleador2.class);
                                                     intent2.putExtra("CLAVE CORREO EMPLEADOR", email);
                                                     intent2.putExtra("CLAVE ID", clave);
+                                                    intent2.putExtra("CLAVE CONTRASEÑA", password);
                                                     startActivity(intent2);
                                                         Toast.makeText(RegistroEmpleador1.this,"Todo good", Toast.LENGTH_LONG).show();
                                                 }else{

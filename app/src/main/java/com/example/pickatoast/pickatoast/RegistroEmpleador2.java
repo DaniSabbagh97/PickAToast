@@ -28,6 +28,7 @@ public class RegistroEmpleador2 extends AppCompatActivity {
     String email;
     String nombre;
     String clave;
+    String password;
     FirebaseUser user;
     String uid;
 
@@ -44,6 +45,7 @@ public class RegistroEmpleador2 extends AppCompatActivity {
 
         email=getIntent().getExtras().getString("CLAVE CORREO EMPLEADOR");
         clave=getIntent().getExtras().getString("CLAVE ID");
+        password=getIntent().getExtras().getString("CLAVE CONTRASEÑA");
         user= FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
@@ -70,6 +72,9 @@ public class RegistroEmpleador2 extends AppCompatActivity {
                 datosEmpresa.put("ciudadEmpleador", localidad);
                 datosEmpresa.put("direccionEmpleador", direccion);
                 datosEmpresa.put("id",uid);
+                datosEmpresa.put("contraseñaEmpleador", password);
+                datosEmpresa.put("esEmpleador", true);
+                datosEmpresa.put("imagenLogoEmpresaURL","");
 
                 databaseRef.child(uid).setValue(datosEmpresa);
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2
