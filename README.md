@@ -31,10 +31,10 @@ https://xd.adobe.com/view/7a476f34-806a-4961-5896-6918059f8090-0c76/screen/48e8d
 
 
 
-* **Daniel Sabbagh Pastor** - *Project master* - [Daniel](https://github.com/villanuevand)
-* **David San José Gavilán** - *Scrum master* - [David](#fulanito-de-tal)
-* **Cristina Díez Sobrino** - *Design master* - [Cristina](#fulanito-de-tal)
-* **Sergio Navarro** - *Cloud master* - [Sergio](#fulanito-de-tal)
+* **Daniel Sabbagh Pastor** - *Project master* - [Daniel](https://github.com/DaniSabbagh97)
+* **David San José Gavilán** - *Scrum master* - [David](https://github.com/nerfshacopls)
+* **Cristina Díez Sobrino** - *Design master* - [Cristina](https://github.com/crisselene)
+* **Sergio Navarro** - *Cloud master* - [Sergio](https://github.com/Navarro21111)
 
 
 ## Expresiones de Gratitud 🎁
