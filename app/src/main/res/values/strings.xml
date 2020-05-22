@@ -20,6 +20,7 @@
     <string name="btn_editar_empleador">Editar Datos</string>
     <string name="btn_guardar_empleador">Guardar</string>
     <string name="btn_cambiar_contraseña">Borrar Perfil</string>
+    <string name="registrate"><u>¿No tienes cuenta? ¡Regístrate!</u></string>
 
 
     <!--Descripcion de ImageButtons para que no lo de como error-->
