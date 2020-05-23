@@ -20,8 +20,12 @@
     <string name="btn_editar_empleador">Editar Datos</string>
     <string name="btn_guardar_empleador">Guardar</string>
     <string name="btn_cambiar_contraseña">Borrar Perfil</string>
-    <string name="registrate"><u>¿No tienes cuenta? ¡Regístrate!</u></string>
 
+    <!-- Subrayados-->
+    <string name="registrate"><u>¿No tienes cuenta? ¡Regístrate!</u></string>
+    <string name="tvduracion"><u>Duración______________ </u></string>
+    <string name="tvlocalizacion"><u>Localización____________ </u></string>
+    <string name="tvrestaurante"><u>Local___________________ </u></string>
 
     <!--Descripcion de ImageButtons para que no lo de como error-->
     <string name="topMainMenuSideMenuButtonDesc">Hamburguer button to open the left menu</string>

@@ -96,4 +96,25 @@
         <item name="android:alpha">0.5</item>
         <item name="android:textAlignment">center</item>
     </style>
+
+    <style name="micro_title_event">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:fontFamily">@font/segoui</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:alpha">0.8</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="datos_events">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:fontFamily">@font/segoui</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:layout_marginBottom">25dp</item>
+    </style>
 </resources>

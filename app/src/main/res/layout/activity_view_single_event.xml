@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewSingleEvent">
+    tools:context=".ViewSingleEvent"
+    android:background="@drawable/background_light">
 
 
     <TextView
@@ -13,7 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:textSize="34dp"
+        android:textSize="36dp"
+        android:fontFamily="@font/bodoni"
+        android:textColor="@color/brown"
         android:text="TextView"
         />
 
@@ -23,47 +26,58 @@
         android:layout_height="246dp"
         android:layout_below="@+id/tvNombreOferta"
         android:gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="35dp"
         app:srcCompat="@drawable/toast_logo" />
 
     <TextView
         android:id="@+id/tvDuracionOferta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ivImagenOfertaIndividual"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:textSize="24dp"
-        android:text="TextView" />
+        style="@style/datos_events"
+        android:layout_below="@+id/r_title"
+        android:background="@drawable/list_background"
+        android:text="TextView"
+         />
+
+    <TextView
+        android:id="@+id/r_title"
+        android:layout_above="@id/tvRestauranteOferta"
+        android:text="@string/tvrestaurante"
+        style="@style/micro_title_event" />
 
     <TextView
         android:id="@+id/tvRestauranteOferta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvDuracionOferta"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
-        android:textSize="18dp"
-        android:text="TextView" />
+        android:layout_below="@+id/ivImagenOfertaIndividual"
+        android:text="TextView"
+        android:background="@drawable/list_background"
+        style="@style/datos_events"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/l_title"
+        android:layout_above="@id/tvLocalizacionOferta"
+        android:text="@string/tvlocalizacion"
+        style="@style/micro_title_event"/>
 
     <TextView
         android:id="@+id/tvLocalizacionOferta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_below="@+id/tvRestauranteOferta"
-        android:layout_marginTop="15dp"
-        android:textSize="14dp"
-        android:text="TextView" />
-
+        android:text="TextView"
+        android:background="@drawable/list_background"
+        style="@style/datos_events"/>
 
 
     <Button
         android:id="@+id/btnApuntarseOferta"
-        android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:background="@drawable/boton_redondo"
+        android:textAllCaps="false"
+        android:textColor="@color/brown"
+        android:fontFamily="@font/segoui"
+        android:textSize="20dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvLocalizacionOferta"
-        android:layout_marginTop="55dp"
-        android:text="Button" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Apuntarme" />
 </RelativeLayout>
