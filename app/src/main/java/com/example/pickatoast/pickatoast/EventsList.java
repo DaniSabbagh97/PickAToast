@@ -61,7 +61,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(EventsList.this, CreateEvent.class);
-                i.putExtra("clave", clave);
+                i.putExtra("clave", clave);//TODO UID DEL VIEW
                 startActivity(i);
             }
         });

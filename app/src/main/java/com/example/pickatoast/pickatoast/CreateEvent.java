@@ -56,11 +56,11 @@ public class CreateEvent extends AppCompatActivity {
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
-   // private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
    //
-    // private FirebaseUser user;
+    private FirebaseUser user;
 
-    private String clave;
+    //private String clave;
 
     Uri imagenUri;
 
@@ -82,12 +82,12 @@ public class CreateEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
 
-        Bundle bun = getIntent().getExtras();
+        /*Bundle bun = getIntent().getExtras();
         if (bun == null) {
             System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }else{
             clave = bun.getString("clave");
-        }
+        }*/
 
         etNombre = (EditText) findViewById(R.id.etNombreOferta);
         etRestaurante = (EditText) findViewById(R.id.etRestaurante);
@@ -127,9 +127,15 @@ public class CreateEvent extends AppCompatActivity {
 
     private void saveData() {
 
-        //user=mAuth.getCurrentUser();
+        /*FirebaseUser fb = FirebaseAuth.getInstance().getCurrentUser();
+        String a = fb.getUid();
+        System.out.println(fb+"hollllllllaaaaaa");
+        System.out.println(a+" eeeooooo");
 
-        //String clave = "clave";
+        user=mAuth.getCurrentUser();*/
+        //todo inicilizar el get instance
+
+        String clave = user.getUid();
         oferta = new OfertaEmpleador(clave, nombreOferta, descripcionOferta, nombreRestaurante, localizacionRestaurante, duracionOferta, url, true);
         mDatabaseRef.child(clave).setValue(oferta);
 

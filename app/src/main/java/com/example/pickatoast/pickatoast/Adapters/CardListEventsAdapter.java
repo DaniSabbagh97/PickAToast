@@ -2,6 +2,8 @@ package com.example.pickatoast.pickatoast.Adapters;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ import com.example.pickatoast.pickatoast.R;
 import com.example.pickatoast.pickatoast.ViewSingleEvent;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAdapter.CardEventsViewHolder> {
@@ -46,9 +49,11 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CardListEventsAdapter.CardEventsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CardListEventsAdapter.CardEventsViewHolder holder, final int position) {
 
         OfertaEmpleador ofertaEmpleador = mOferta.get( position );
+
+
 
         nombre = ofertaEmpleador.getNombreOferta();
         restaurante = ofertaEmpleador.getRestaurante();
@@ -56,6 +61,7 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
         id = ofertaEmpleador.getId();
         localizacion = ofertaEmpleador.getLocalizacionOferta();
         duracion = ofertaEmpleador.getDuracionContrato();
+
 
         holder.tvNombre.setText( nombre );
         holder.tvDescripcion.setText( restaurante );
@@ -65,7 +71,13 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
         holder.btnApuntarse.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              changeWindowTo(ViewSingleEvent.class, id, foto, nombre, duracion, localizacion, restaurante);
+
+                String idOferta = mOferta.get(position).getId();
+                System.out.println(position);
+                System.out.println(idOferta);
+                changeWindowTo(ViewSingleEvent.class, idOferta);
+
+
             }
         } );
 
@@ -79,15 +91,11 @@ public class CardListEventsAdapter extends RecyclerView.Adapter<CardListEventsAd
 
     }
 
-    void changeWindowTo(Class goTo, String idUser, String foto, String nombre, String duracion, String localizacion, String restaurante){
+    void changeWindowTo(Class goTo, String idUser){
         intent = new Intent(activity,goTo);
-        intent.putExtra("idOferta", idUser);
-        intent.putExtra("foto", foto);
-        intent.putExtra("nombre", nombre);
-        intent.putExtra("duracion", duracion);
-        intent.putExtra("localizacion", localizacion);
-        intent.putExtra("restaurante", restaurante);
+        intent.putExtra("idUser", idUser);
         activity.startActivity(intent);
+
 
     }
 

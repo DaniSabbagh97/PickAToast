@@ -1,5 +1,6 @@
 package com.example.pickatoast.pickatoast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,7 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+
 
 public class ViewSingleEvent extends AppCompatActivity {
 
@@ -18,6 +26,8 @@ public class ViewSingleEvent extends AppCompatActivity {
     private Button btnApuntarseOferta;
 
     String nombre, restaurante, foto, id, duracion, localizacion;
+
+    static OfertaEmpleador[] currentOferta = new OfertaEmpleador[1];
 
 
     @Override
@@ -40,24 +50,47 @@ public class ViewSingleEvent extends AppCompatActivity {
             System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }else {
 
-            id = bundle.getString("idOferta");
-            nombre = bundle.getString("nombre");
-            restaurante = bundle.getString("restaurante");
-            foto = bundle.getString("foto");
-            duracion = bundle.getString("duracion");
-            localizacion = bundle.getString("localizacion");
-            System.out.println(id);
-            System.out.println(nombre);
-            System.out.println(foto);
-            System.out.println(duracion);
-            System.out.println(localizacion);
-            System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+            id = bundle.getString("idUser");
+
 
 
         }
 
 
-        cargarDatos();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        database.getReference().child("Ofertas").child(id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                currentOferta[0] = dataSnapshot.getValue(OfertaEmpleador.class);
+
+
+                nombre = currentOferta[0].getNombreOferta();
+                restaurante = currentOferta[0].getRestaurante();
+                duracion = currentOferta[0].getDuracionContrato();
+                localizacion = currentOferta[0].getLocalizacionOferta();
+                foto = currentOferta[0].getLinkImagen();
+
+
+                tvNombreOferta.setText(nombre);
+                tvRestauranteOferta.setText(restaurante);
+                tvDuracionOferta.setText(duracion);
+                tvLocalizacionOferta.setText(localizacion);
+                Picasso.get().load(foto).into(ivOferta);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
 
         btnApuntarseOferta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,15 +102,6 @@ public class ViewSingleEvent extends AppCompatActivity {
         });
     }
 
-    private void cargarDatos() {
-
-        tvNombreOferta.setText(nombre);
-        tvRestauranteOferta.setText(restaurante);
-        tvDuracionOferta.setText(duracion);
-        tvLocalizacionOferta.setText(localizacion);
-        Picasso.get().load(foto).into(ivOferta);
-
-    }
 
 
 }
