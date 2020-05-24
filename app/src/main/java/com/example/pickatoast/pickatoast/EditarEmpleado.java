@@ -82,7 +82,7 @@ public class EditarEmpleado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_empleado);
 
-        correo=getIntent().getExtras().getString("correo");
+      /*  correo=getIntent().getExtras().getString("correo");
         password=getIntent().getExtras().getString("password");
         System.out.println(correo);
         System.out.println(password);
@@ -98,7 +98,7 @@ public class EditarEmpleado extends AppCompatActivity {
                     Toast.makeText(EditarEmpleado.this,"Usuario y/o Contraseña Incorrectos. . .", Toast.LENGTH_LONG).show();
                 }
             }
-        });
+        });*/
 
 
         ciudadEmpleado=findViewById(R.id.etCiudadEmpleado);
@@ -140,9 +140,12 @@ public class EditarEmpleado extends AppCompatActivity {
         databaseRef.child("Empleados").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                System.out.println("MMMMMMMMMMMMMMMMMMMM");
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    System.out.println("NNNNNNNNNNNNNN");
                     firebase = snapshot.getValue(Empleado.class);
                     if(uid.equals(firebase.getIdEmpleado())){
+                        System.out.println("BBBBBBBBBBBBBBBBB");
                         empleado=firebase;
                         ciudadEmpleado.setText(firebase.getCiudadEmpleado());
                         direccionEmpleado.setText(firebase.getDireccionEmpleado());
