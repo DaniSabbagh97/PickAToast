@@ -99,6 +99,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     OfertaEmpleador ofertaEmpleador = snapshot.getValue(OfertaEmpleador.class);
                     _ofertas.add(ofertaEmpleador);
+                    ofertaEmpleador.getId();
                 }
                 adapter.notifyDataSetChanged();
             }
