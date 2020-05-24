@@ -37,7 +37,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class EmployeeProfile extends AppCompatActivity {
 
     EditText etNombreEmpleado, etciudadEmpleado, etDireccionEmpleado, etOficioEmpleado;
-    Button btnCV, btnCambiarPSW, btnGuardar, btnModificarFoto;
+    Button btnCambiarPSW, btnGuardar, btnModificarFoto;
+    //Button btnCV;
     CircleImageView cvPerfilEmpleado;
 
     private FirebaseUser fb = FirebaseAuth.getInstance().getCurrentUser();
@@ -74,7 +75,7 @@ public class EmployeeProfile extends AppCompatActivity {
         
         cvPerfilEmpleado = (CircleImageView) findViewById(R.id.imgImagenPerfilEmpleado); 
         
-        btnCV = (Button) findViewById(R.id.btnCurriculumVitae);
+        //btnCV = (Button) findViewById(R.id.btnCurriculumVitae);
         btnCambiarPSW = (Button) findViewById(R.id.btnCambiarContraseñaEmpleado);
         btnGuardar = (Button) findViewById(R.id.btnGuardarEmpleado);//todo ???
         btnModificarFoto = (Button) findViewById(R.id.btnCambiarImagen);
