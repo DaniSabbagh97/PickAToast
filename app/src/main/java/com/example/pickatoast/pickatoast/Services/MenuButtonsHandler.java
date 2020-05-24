@@ -4,7 +4,13 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.pickatoast.pickatoast.ChangePasswordEmpleado;
+import com.example.pickatoast.pickatoast.EditarEmpleado;
+import com.example.pickatoast.pickatoast.EventsList;
+import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MenuButtonsHandler {
     private Context context;
@@ -18,11 +24,12 @@ public class MenuButtonsHandler {
              case 0:
                 // ChangeWindowService.jumpTo(context, SplashActivity.class);
 
+
                  break;
              //BOTON PERFIL
              case 1:
 
-                 // ChangeWindowService.jumpTo(context, SplashActivity.class);
+                 ChangeWindowService.jumpTo(context, EditarEmpleado.class);
                  break;
              //BOTON AJUSTES
              case 2:
@@ -53,11 +60,18 @@ public class MenuButtonsHandler {
                 break;
             //BOTON INICIO
             case 1:
+                if(!context.getClass().equals(EventsList.class)){
+                    ChangeWindowService.jumpTo(context, EventsList.class);
+                }else{
+                    System.out.println("You are already in the main menu");
 
-               // ChangeWindowService.jumpTo(context, SplashActivity.class);
+                }
+
                 break;
             //BOTON PERFIL
             case 2:
+                ChangeWindowService.jumpTo(context, EditarEmpleado.class);
+
                 break;
 
 
