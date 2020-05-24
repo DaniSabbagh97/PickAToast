@@ -4,44 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarEmpleado"
+    tools:context=".EmployeeProfile"
     android:background="@drawable/background_light">
 
 
     <TextView
         android:id="@+id/textViewPerfil"
         style="@style/title_above"
+        android:layout_marginBottom="60dp"
         android:text="Editar perfil" />
 
     <EditText
-        android:id="@+id/etDireccionEmpleado"
+        android:id="@+id/etciudadEmpleadoPerfil"
         android:layout_width="300dp"
         android:layout_centerHorizontal="true"
         android:layout_height="44dp"
         android:gravity="center"
-        android:layout_below="@id/etCiudadEmpleado"
-        android:hint="Introduce tu direccion"
+        android:layout_below="@id/etNombreEmpleadoPerfil"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/etTrabajoEmpelado"
+        android:id="@+id/etDireccionEmpleadoPerfil"
         android:layout_width="300dp"
         android:layout_height="44dp"
-        android:layout_below="@id/etDireccionEmpleado"
+        android:layout_below="@id/etciudadEmpleadoPerfil"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
         android:gravity="center"
-        android:hint="Introduce tu trabajo en hosteleria"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/etCiudadEmpleado"
+        android:id="@+id/etOficioEmpleadoPerfil"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_below="@id/etDireccionEmpleadoPerfil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:gravity="center"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etNombreEmpleadoPerfil"
         android:layout_width="300dp"
         android:layout_height="44dp"
         android:layout_below="@id/imgImagenPerfilEmpleado"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:hint="Introduce la ciudad donde vives"
         android:inputType="textPersonName" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -51,7 +58,7 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/textViewPerfil"
-       android:layout_marginBottom="20dp"
+       android:layout_marginBottom="40dp"
         android:src="@drawable/profile_girl"
         />
 
@@ -68,22 +75,13 @@
         android:id="@+id/btnCambiarContraseñaEmpleado"
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:layout_below="@id/btnCurriculumVitae"
+        android:layout_below="@id/etOficioEmpleadoPerfil"
         android:background="@drawable/texto_redondo"
         android:layout_marginBottom="10dp"
         style="@style/YellowButton"
         android:text="Cambiar contraseña" />
 
-    <Button
-        android:id="@+id/btnCurriculumVitae"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_marginBottom="10dp"
-        style="@style/YellowButton"
-        android:background="@drawable/texto_redondo"
-        android:layout_below="@id/etTrabajoEmpelado"
-        android:text="Añadir Curriculum Vitae"
-        android:layout_centerHorizontal="true"/>
+
 
     <Button
         android:id="@+id/btnCambiarImagen"

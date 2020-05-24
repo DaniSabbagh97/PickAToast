@@ -48,6 +48,19 @@ public class Empleado implements Serializable {
     public Empleado(int numeroOfertas) {
     }
 
+    public Empleado(String nombreCambiado, String ciudadCambiado, String direccionCambiado, String oficioCambiado, String url, String idNoUso, String contrasenia, String correo) {
+        this.nombreEmpleado = nombreCambiado;
+        this.ciudadEmpleado = ciudadCambiado;
+        this.direccionEmpleado = direccionCambiado;
+        this.oficioEmpleado = oficioCambiado;
+        this.imagenPerfilEmpleadoURL = url;
+        this.idEmpleado = idNoUso;
+        this.contraseñaEmpleado = contrasenia;
+        this.correoEmpleado = correo;
+    }
+
+
+
     public int getnumeroOfertas() {
         return numeroOfertas;
     }

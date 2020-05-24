@@ -5,7 +5,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.pickatoast.pickatoast.ChangePasswordEmpleado;
-import com.example.pickatoast.pickatoast.EditarEmpleado;
+
+import com.example.pickatoast.pickatoast.EmployeeProfile;
 import com.example.pickatoast.pickatoast.EventsList;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.R;
@@ -30,7 +31,7 @@ public class MenuButtonsHandler {
              //BOTON PERFIL
              case 1:
 
-                 ChangeWindowService.jumpTo(context, EditarEmpleado.class);
+                 ChangeWindowService.jumpTo(context, EmployeeProfile.class);
                  break;
              //BOTON AJUSTES
              case 2:
@@ -72,7 +73,7 @@ public class MenuButtonsHandler {
                 break;
             //BOTON PERFIL
             case 2:
-                ChangeWindowService.jumpTo(context, EditarEmpleado.class);
+                ChangeWindowService.jumpTo(context, EmployeeProfile.class);
 
                 break;
 

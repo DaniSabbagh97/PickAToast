@@ -78,7 +78,7 @@ public class ViewSingleEvent extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        database.getReference().child("Ofertas").child(id).child("nombreEmpelado").addValueEventListener(new ValueEventListener() {
+        database.getReference().child("Ofertas").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -159,9 +159,9 @@ public class ViewSingleEvent extends AppCompatActivity {
 
                 currentEmpleado[0] = dataSnapshot.getValue(Empleado.class);
 
-                Empleado listEm = currentEmpleado[0];
+                //Empleado listEm = [0];
 
-                numOfertas = listEm.getnumeroOfertas();
+                numOfertas = currentEmpleado[0].getnumeroOfertas();
                 System.out.println("HIJODEPUTA");
                 System.out.println(numOfertas);
 
