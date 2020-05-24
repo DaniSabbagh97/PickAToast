@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/textViewPerfil"
         style="@style/title_above"
-        android:text="Perfil" />
+        android:text="Editar perfil" />
 
     <EditText
         android:id="@+id/etDireccionEmpleado"
