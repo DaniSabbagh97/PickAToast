@@ -4,88 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarEmpleado">
+    tools:context=".EditarEmpleado"
+    android:background="@drawable/background_light">
+
+
+    <TextView
+        android:id="@+id/textViewPerfil"
+        style="@style/title_above"
+        android:text="Perfil" />
 
     <EditText
         android:id="@+id/etDireccionEmpleado"
-        android:layout_width="214dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="392dp"
-        android:ems="10"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:layout_below="@id/etCiudadEmpleado"
         android:hint="Introduce tu direccion"
-        android:inputType="textPersonName"
-        android:textSize="12sp" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etTrabajoEmpelado"
-        android:layout_width="214dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="344dp"
-        android:ems="10"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_below="@id/etDireccionEmpleado"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
         android:hint="Introduce tu trabajo en hosteleria"
-        android:inputType="textPersonName"
-        android:textSize="12sp" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etCiudadEmpleado"
-        android:layout_width="214dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="438dp"
-        android:ems="10"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_below="@id/imgImagenPerfilEmpleado"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:hint="Introduce la ciudad donde vives"
-        android:inputType="textPersonName"
-        android:textSize="12sp" />
+        android:inputType="textPersonName" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgImagenPerfilEmpleado"
-        android:layout_width="174dp"
-        android:layout_height="145dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="97dp"
-        android:layout_marginBottom="525dp"
-        app:srcCompat="@drawable/toast_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textViewPerfil"
+       android:layout_marginBottom="20dp"
+        android:src="@drawable/profile_girl"
         />
 
     <Button
         android:id="@+id/btnGuardarEmpleado"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="20dp"
+        style="@style/YellowButton"
         android:text="@string/btn_guardar_empleador" />
 
     <Button
         android:id="@+id/btnCambiarContraseñaEmpleado"
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="39dp"
+        android:layout_below="@id/btnCurriculumVitae"
+        android:background="@drawable/texto_redondo"
+        android:layout_marginBottom="10dp"
+        style="@style/YellowButton"
         android:text="Cambiar contraseña" />
 
     <Button
         android:id="@+id/btnCurriculumVitae"
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="77dp"
-        android:text="Curriculum Vitae" />
+        android:layout_marginBottom="10dp"
+        style="@style/YellowButton"
+        android:background="@drawable/texto_redondo"
+        android:layout_below="@id/etTrabajoEmpelado"
+        android:text="Añadir Curriculum Vitae"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/btnCambiarImagen"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="115dp"
-        android:text="Cambiar imagen" />
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="100dp"
+        android:layout_alignBottom="@id/imgImagenPerfilEmpleado"
+        android:background="@drawable/boton_redondo"
+        android:drawableStart="@drawable/edit"
+        android:paddingStart="12dp" />
 
 </RelativeLayout>

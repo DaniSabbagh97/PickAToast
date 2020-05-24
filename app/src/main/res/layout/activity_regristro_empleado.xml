@@ -9,6 +9,7 @@
     <Button
         android:id="@+id/btnRegistrarEmpleado"
         style="@style/YellowButton"
+        android:layout_alignParentBottom="true"
         android:text="@string/btn_registro_uno" />
 
     <EditText
