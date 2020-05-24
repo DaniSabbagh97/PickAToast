@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".info">
+    tools:context=".info"
+    android:background="@drawable/background_light">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bodoni"
+        android:textColor="@color/brown"
+        android:layout_centerHorizontal="true"
+        android:text="PickAToast"
+        android:layout_below="@id/imageView4"
+        android:textSize="24dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="408dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/textView"
+        app:srcCompat="@drawable/pickatoast"
+        tools:layout_editor_absoluteX="3dp"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="55dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/toast_logo"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        />
+
+    <TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/imageView3"
+    android:text="Proyecto I Ingeniería Informática"
+    android:gravity="center"
+    android:fontFamily="@font/segoui"
+    android:textSize="15dp"
+    android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:text="Universidad Europea"
+        android:gravity="center"
+        android:fontFamily="@font/segoui"
+        android:textSize="15dp"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/github"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView3"
+        android:text="Versión Android 3.6.3"
+        android:textColorLink="@color/brown"
+        android:gravity="center"
+        android:fontFamily="@font/segoui"
+        android:textSize="15dp"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

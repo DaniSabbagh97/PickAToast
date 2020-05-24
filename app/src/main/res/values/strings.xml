@@ -20,6 +20,7 @@
     <string name="btn_editar_empleador">Editar Datos</string>
     <string name="btn_guardar_empleador">Guardar</string>
     <string name="btn_cambiar_contraseña">Borrar Perfil</string>
+    <string name="github"><a href="https://github.com/DaniSabbagh97/PickAToast">GITHUB</a>"</string>
 
     <!-- Subrayados-->
     <string name="registrate"><u>¿No tienes cuenta? ¡Regístrate!</u></string>
