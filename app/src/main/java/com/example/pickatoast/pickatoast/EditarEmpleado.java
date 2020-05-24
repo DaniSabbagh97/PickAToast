@@ -266,4 +266,10 @@ public class EditarEmpleado extends AppCompatActivity {
 
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ChangeWindowService.jumpTo(this,ChangeWindowService.getLastClass());
+    }
 }
