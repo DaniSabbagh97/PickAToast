@@ -9,6 +9,7 @@ import com.example.pickatoast.pickatoast.EditarEmpleado;
 import com.example.pickatoast.pickatoast.EventsList;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.R;
+import com.example.pickatoast.pickatoast.info;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -36,6 +37,7 @@ public class MenuButtonsHandler {
                  break;
              //BOTON InFO
              case 3:
+                 ChangeWindowService.jumpTo(context, info.class);
                  break;
              //BOTON CERRAR SESION
              case 4:
