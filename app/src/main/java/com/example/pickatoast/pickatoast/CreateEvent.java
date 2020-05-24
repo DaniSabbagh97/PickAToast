@@ -127,15 +127,13 @@ public class CreateEvent extends AppCompatActivity {
 
     private void saveData() {
 
-        /*FirebaseUser fb = FirebaseAuth.getInstance().getCurrentUser();
-        String a = fb.getUid();
+        FirebaseUser fb = FirebaseAuth.getInstance().getCurrentUser();
+        String clave = fb.getUid();
         System.out.println(fb+"hollllllllaaaaaa");
-        System.out.println(a+" eeeooooo");
+        System.out.println(clave+" eeeooooo");
 
-        user=mAuth.getCurrentUser();*/
         //todo inicilizar el get instance
 
-        String clave = user.getUid();
         oferta = new OfertaEmpleador(clave, nombreOferta, descripcionOferta, nombreRestaurante, localizacionRestaurante, duracionOferta, url, true);
         mDatabaseRef.child(clave).setValue(oferta);
 

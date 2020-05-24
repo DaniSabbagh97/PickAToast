@@ -75,6 +75,7 @@ public class RegistroEmpleado2 extends AppCompatActivity {
                 datosUsuario.put("contraseñaEmpleado", contraseña);
                 datosUsuario.put("imagenPerfilEmpleadoURL","");
                 datosUsuario.put("subidaCurriculumURL","");
+                datosUsuario.put("numeroOfertas", 0);
 
                 databaseRef.child(clave).setValue(datosUsuario);
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2

@@ -116,6 +116,7 @@ public class RegristroEmpleado extends AppCompatActivity {
                                     }else{
 
                                         Toast.makeText(RegristroEmpleado.this,"No se pudo registrar el usuario ",Toast.LENGTH_LONG).show();
+                                        System.out.println("YYYYYYYYYYYYYYYYYYY");
                                         System.out.println(task.getException());
                                     }
                                     progressDialog.dismiss();
