@@ -186,7 +186,7 @@ public class EditarEmpleado extends AppCompatActivity {
                 Map<String, Object> datosEmpresa= new HashMap<>();
 
 
-                datosEmpresa.put("nombreEmpresa",empleado.getNombreEmpleado());
+                datosEmpresa.put("nombreEmpleado",empleado.getNombreEmpleado());
                 datosEmpresa.put("correoEmpleado", empleado.getCorreoEmpleado());
                 datosEmpresa.put("ciudadEmpleado", ciudadEmpleado.getText().toString());
                 datosEmpresa.put("direccionEmpleado", direccionEmpleado.getText().toString());
