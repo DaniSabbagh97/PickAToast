@@ -38,7 +38,7 @@ public class RegistroEmpleado2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_empleado2);
 
-        nombreEmpleado=findViewById(R.id.etNombreEmpleado);
+        nombreEmpleado=findViewById(R.id.etNombreEmpleadoPerfil);
         localidadEmpleado=findViewById(R.id.etLocalidadRegistro);
         oficioEmpleado=findViewById(R.id.etOficioRegistro);
         direccion=findViewById(R.id.etDireccionEmpeladoReg);
@@ -75,6 +75,7 @@ public class RegistroEmpleado2 extends AppCompatActivity {
                 datosUsuario.put("contraseñaEmpleado", contraseña);
                 datosUsuario.put("imagenPerfilEmpleadoURL","");
                 datosUsuario.put("subidaCurriculumURL","");
+                datosUsuario.put("numeroOfertas", 0);
 
                 databaseRef.child(clave).setValue(datosUsuario);
                 //VQuwuF9uPxQDQDSPSBDBSDMRAXv2

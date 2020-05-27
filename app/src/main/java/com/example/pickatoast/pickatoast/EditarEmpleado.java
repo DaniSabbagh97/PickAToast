@@ -1,3 +1,4 @@
+/*
 package com.example.pickatoast.pickatoast;
 
 import androidx.annotation.NonNull;
@@ -82,7 +83,7 @@ public class EditarEmpleado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_empleado);
 
-      /*  correo=getIntent().getExtras().getString("correo");
+  correo=getIntent().getExtras().getString("correo");
         password=getIntent().getExtras().getString("password");
         System.out.println(correo);
         System.out.println(password);
@@ -98,7 +99,8 @@ public class EditarEmpleado extends AppCompatActivity {
                     Toast.makeText(EditarEmpleado.this,"Usuario y/o Contraseña Incorrectos. . .", Toast.LENGTH_LONG).show();
                 }
             }
-        });*/
+        });
+
 
 
         ciudadEmpleado=findViewById(R.id.etCiudadEmpleado);
@@ -273,3 +275,4 @@ public class EditarEmpleado extends AppCompatActivity {
         ChangeWindowService.jumpTo(this,ChangeWindowService.getLastClass());
     }
 }
+*/

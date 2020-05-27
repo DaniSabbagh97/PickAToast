@@ -22,7 +22,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".info" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".EmployeeProfile"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".info"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ViewSingleEvent"
             android:screenOrientation="portrait" />
@@ -32,9 +37,9 @@
         <activity
             android:name=".CreateEvent"
             android:screenOrientation="portrait" />
-        <activity
+        <!--<activity
             android:name=".EditarEmpleado"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" />-->
         <activity
             android:name=".Login"
             android:screenOrientation="portrait" />

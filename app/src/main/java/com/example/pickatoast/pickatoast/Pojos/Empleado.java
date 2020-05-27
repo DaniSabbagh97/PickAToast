@@ -1,23 +1,32 @@
 package com.example.pickatoast.pickatoast.Pojos;
 
-public class Empleado {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Empleado implements Serializable {
 
 
-    String idEmpleado;
-    String nombreEmpleado;
-    String ciudadEmpleado;
-    String direccionEmpleado;
-    boolean trabaja;
-    String puntuacionEmpleado;
-    String imagenPerfilEmpleadoURL;
-    String oficioEmpleado;
-    String subidaCurriculumURL;
-    String descipcionEmpleado;
-    String contraseñaEmpleado;
-    String correoEmpleado;
+    private String idEmpleado;
+    private String nombreEmpleado;
+    private String ciudadEmpleado;
+    private String direccionEmpleado;
+    private boolean trabaja;
+    private String puntuacionEmpleado;
+    private String imagenPerfilEmpleadoURL;
+    private String oficioEmpleado;
+    private String subidaCurriculumURL;
+    private String descipcionEmpleado;
+    private String contraseñaEmpleado;
+    private String correoEmpleado;
+    private int numeroOfertas;
+    private ArrayList<OfertaEmpleador> ofertasEmpleados;
+
+    public Empleado(ArrayList<OfertaEmpleador> ofertasEmpleados) {
+        this.ofertasEmpleados = ofertasEmpleados;
+    }
 
     public Empleado(String idEmpleado, String nombreEmpleado, String ciudadEmpleado, String direccionEmpleado, boolean trabaja, String puntuacionEmpleado,
-                    String imagenPerfilEmpleadoURL, String oficioEmpleado, String subidaCurriculumURL, String descipcionEmpleado, String contraseñaEmpleado, String correoEmpleado) {
+                    String imagenPerfilEmpleadoURL, String oficioEmpleado, String subidaCurriculumURL, String descipcionEmpleado, String contraseñaEmpleado, String correoEmpleado, int numeroOfertas) {
         this.idEmpleado = idEmpleado;
         this.nombreEmpleado = nombreEmpleado;
         this.ciudadEmpleado = ciudadEmpleado;
@@ -30,9 +39,42 @@ public class Empleado {
         this.descipcionEmpleado = descipcionEmpleado;
         this.contraseñaEmpleado = contraseñaEmpleado;
         this.correoEmpleado = correoEmpleado;
+        this.numeroOfertas = numeroOfertas;
     }
 
     public Empleado() {
+    }
+
+    public Empleado(int numeroOfertas) {
+    }
+
+    public Empleado(String nombreCambiado, String ciudadCambiado, String direccionCambiado, String oficioCambiado, String url, String idNoUso, String contrasenia, String correo) {
+        this.nombreEmpleado = nombreCambiado;
+        this.ciudadEmpleado = ciudadCambiado;
+        this.direccionEmpleado = direccionCambiado;
+        this.oficioEmpleado = oficioCambiado;
+        this.imagenPerfilEmpleadoURL = url;
+        this.idEmpleado = idNoUso;
+        this.contraseñaEmpleado = contrasenia;
+        this.correoEmpleado = correo;
+    }
+
+
+
+    public int getnumeroOfertas() {
+        return numeroOfertas;
+    }
+
+    public void setnumeroOfertas(int numeroOfertas) {
+        this.numeroOfertas = numeroOfertas;
+    }
+
+    public ArrayList<OfertaEmpleador> getOfertasEmpleados() {
+        return ofertasEmpleados;
+    }
+
+    public void setOfertasEmpleados(ArrayList<OfertaEmpleador> ofertasEmpleados) {
+        this.ofertasEmpleados = ofertasEmpleados;
     }
 
     public String getCorreoEmpleado() {

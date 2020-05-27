@@ -70,7 +70,7 @@ public class ChangePasswordEmpleado extends AppCompatActivity {
                                         if(currentPassword.getText().toString().equals(firebase.getContraseñaEmpleado())){
                                             if(newPassword.getText().toString().equals(newPassword2.getText().toString())){
                                                 user.updatePassword(newPassword.getText().toString());
-                                                Intent i= new Intent(ChangePasswordEmpleado.this, EditarEmpleado.class);
+                                                Intent i= new Intent(ChangePasswordEmpleado.this, EmployeeProfile.class);
                                                 startActivity(i);
                                                 Toast.makeText(ChangePasswordEmpleado.this,"Contraseña Guardada",Toast.LENGTH_LONG).show();
                                             }else{

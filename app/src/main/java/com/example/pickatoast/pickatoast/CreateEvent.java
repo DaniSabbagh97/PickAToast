@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -127,20 +128,17 @@ public class CreateEvent extends AppCompatActivity {
 
     private void saveData() {
 
-        /*FirebaseUser fb = FirebaseAuth.getInstance().getCurrentUser();
-        String a = fb.getUid();
+        FirebaseUser fb = FirebaseAuth.getInstance().getCurrentUser();
+        String clave = fb.getUid();
         System.out.println(fb+"hollllllllaaaaaa");
-        System.out.println(a+" eeeooooo");
+        System.out.println(clave+" eeeooooo");
 
-        user=mAuth.getCurrentUser();*/
         //todo inicilizar el get instance
 
-        String clave = user.getUid();
         oferta = new OfertaEmpleador(clave, nombreOferta, descripcionOferta, nombreRestaurante, localizacionRestaurante, duracionOferta, url, true);
         mDatabaseRef.child(clave).setValue(oferta);
 
-        Intent i = new Intent(CreateEvent.this, EventsList.class);
-        startActivity(i);
+        ChangeWindowService.jumpTo(CreateEvent.this,EventsList.class);
         Toast.makeText(CreateEvent.this, "Oferta Creada con Éxito", Toast.LENGTH_LONG).show();
 
 
