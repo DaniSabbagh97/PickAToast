@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ChangeWindowService.jumpTo(Login.this,EmployeeProfile.class);
+                ChangeWindowService.jumpTo(Login.this,RegristroEmpleado.class);
             }
         });
 
