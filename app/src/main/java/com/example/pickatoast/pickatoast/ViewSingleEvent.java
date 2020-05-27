@@ -113,7 +113,7 @@ public class ViewSingleEvent extends AppCompatActivity {
             public void onClick(View view) {
                 //TODO APUNTARSE A EVENTO
                 popup();
-                Toast.makeText(ViewSingleEvent.this, "Te Has Apuntado a Este Evento, Gracias!!", Toast.LENGTH_LONG).show();
+
 
             }
 
@@ -200,6 +200,7 @@ public class ViewSingleEvent extends AppCompatActivity {
             numOfertas = numOfertas +1;
 
             myRef.setValue(numOfertas);
+            Toast.makeText(ViewSingleEvent.this, "Te Has Apuntado a Este Evento, Gracias!!", Toast.LENGTH_LONG).show();
 
         }else{
             String msg = "Ya estas suscrito a 5 ofertas!";
