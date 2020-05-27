@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
@@ -40,13 +41,8 @@ public class ViewSingleEvent extends AppCompatActivity {
     OfertaEmpleador oe = new OfertaEmpleador();
     private FirebaseUser fb = FirebaseAuth.getInstance().getCurrentUser();
     private String idUserConnected = fb.getUid();
-    private int numOfertas;
-
-
-
-
-
-
+    String ciudadEmpleado, pswEmpleado, correoEmpleado, direccionEmpleado, idEmpleado, imagenPerfilEmpleado, nombreEmpleado, oficioEmpleado ;
+    int numOfertas;
 
 
     @Override
@@ -151,41 +147,40 @@ public class ViewSingleEvent extends AppCompatActivity {
     private void apuntarse(){
 
 
+
+
+
+
         FirebaseDatabase db = FirebaseDatabase.getInstance();
 
-        db.getReference().child("Empleados").child(idUserConnected).addValueEventListener(new ValueEventListener() {
+
+
+
+        db.getReference().child("Empleados").child(idUserConnected)
+                .addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
 
                 currentEmpleado[0] = dataSnapshot.getValue(Empleado.class);
 
                 //Empleado listEm = [0];
 
-                numOfertas = currentEmpleado[0].getnumeroOfertas();
-                System.out.println("HIJODEPUTA");
-                System.out.println(numOfertas);
+                 numOfertas = currentEmpleado[0].getnumeroOfertas();
+                System.out.println("ANTES 1"+numOfertas);
+
+                   /* System.out.println("DESPUES 2"+numOfertas);
+                    ciudadEmpleado = currentEmpleado[0].getCiudadEmpleado();
+                    pswEmpleado = currentEmpleado[0].getContraseñaEmpleado();
+                    correoEmpleado = currentEmpleado[0].getCorreoEmpleado();
+                    direccionEmpleado = currentEmpleado[0].getDireccionEmpleado();
+                    idEmpleado = currentEmpleado[0].getIdEmpleado();
+                    imagenPerfilEmpleado = currentEmpleado[0].getImagenPerfilEmpleadoURL();
+                    nombreEmpleado = currentEmpleado[0].getNombreEmpleado();
+                    oficioEmpleado = currentEmpleado[0].getOficioEmpleado();*/
 
 
-                if (numOfertas < 5){//TODO LO HACE MUCHAS VECES HASTA QUE EL RESULTADO ES 5 Y SE TERMINA SIN SER UN FOR!!!
-                    int resultado;
-                    resultado = numOfertas +1;
-                    System.out.println(resultado);
-                    String ciudadEmpleado = currentEmpleado[0].getCiudadEmpleado();
-                    String pswEmpleado = currentEmpleado[0].getContraseñaEmpleado();
-                    String correoEmpleado = currentEmpleado[0].getCorreoEmpleado();
-                    String direccionEmpleado = currentEmpleado[0].getDireccionEmpleado();
-                    String idEmpleado = currentEmpleado[0].getIdEmpleado();
-                    String imagenPerfilEmpleado = currentEmpleado[0].getImagenPerfilEmpleadoURL();
-                    String nombreEmpleado = currentEmpleado[0].getNombreEmpleado();
-                    String oficioEmpleado = currentEmpleado[0].getOficioEmpleado();
-                    String subidaCV = currentEmpleado[0].getSubidaCurriculumURL();
-                    e = new Empleado(idEmpleado, nombreEmpleado, ciudadEmpleado, direccionEmpleado, true, null, imagenPerfilEmpleado, oficioEmpleado, subidaCV, null, pswEmpleado, correoEmpleado, resultado);
-                    dataSnapshot.getRef().setValue(e);
-
-                }else if(numOfertas == 5){
-                    String msg = "Ya estas suscrito a 5 ofertas!";
-                    Toast.makeText(ViewSingleEvent.this, msg, Toast.LENGTH_LONG).show();
-                }
 
             }
 
@@ -194,9 +189,24 @@ public class ViewSingleEvent extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ViewSingleEvent.this, "Hubo un error", Toast.LENGTH_SHORT).show();
 
             }
         });
+        FirebaseDatabase dbse = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = dbse.getReference().child("Empleados").child(idUserConnected).child("numOferta");
+        if (numOfertas < 5){
+
+            numOfertas = numOfertas +1;
+
+            myRef.setValue(numOfertas);
+
+        }else{
+            String msg = "Ya estas suscrito a 5 ofertas!";
+            Toast.makeText(ViewSingleEvent.this, msg, Toast.LENGTH_LONG).show();
+        }
+       // e = new Empleado(idEmpleado, nombreEmpleado, ciudadEmpleado, direccionEmpleado, true, null, imagenPerfilEmpleado, oficioEmpleado, subidaCV, null, pswEmpleado, correoEmpleado, numOfertas);
+
 
         ChangeWindowService.jumpTo(ViewSingleEvent.this, EventsList.class);
 

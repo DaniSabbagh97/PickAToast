@@ -38,7 +38,7 @@ public class RegistroEmpleado2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_empleado2);
 
-        nombreEmpleado=findViewById(R.id.etNombreEmpleadoPerfil);
+        nombreEmpleado=findViewById(R.id.etNombreEmpleado);
         localidadEmpleado=findViewById(R.id.etLocalidadRegistro);
         oficioEmpleado=findViewById(R.id.etOficioRegistro);
         direccion=findViewById(R.id.etDireccionEmpeladoReg);
