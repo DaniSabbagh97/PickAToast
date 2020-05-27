@@ -134,8 +134,9 @@ public class EmployeeProfile extends AppCompatActivity {
                 ciudad = currentEmpleado[0].getCiudadEmpleado();
                 direccion = currentEmpleado[0].getDireccionEmpleado();
                 oficio = currentEmpleado[0].getOficioEmpleado();
+                foto = currentEmpleado[0].getImagenPerfilEmpleadoURL();
 
-                if(currentEmpleado[0].getImagenPerfilEmpleadoURL() == null  ){
+                if(foto == null  ){
                     Toast.makeText(EmployeeProfile.this, "Aún debe cargar su imagen de Perfil", Toast.LENGTH_LONG).show();
                 }else {
                     foto = currentEmpleado[0].getImagenPerfilEmpleadoURL();
@@ -145,12 +146,12 @@ public class EmployeeProfile extends AppCompatActivity {
                 etciudadEmpleado.setText(ciudad);
                 etDireccionEmpleado.setText(direccion);
                 etOficioEmpleado.setText(oficio);
-                if(foto == null){
+               /* if(foto == null){
                     Toast.makeText(EmployeeProfile.this, "Aún debe cargar su imagen de Perfil", Toast.LENGTH_LONG).show();
                 }else{
                     Picasso.get().load(foto).into(cvPerfilEmpleado);
                 }
-                    
+                    */
                
 
 
