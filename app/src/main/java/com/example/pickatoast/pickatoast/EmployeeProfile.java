@@ -136,8 +136,9 @@ public class EmployeeProfile extends AppCompatActivity {
                 oficio = currentEmpleado[0].getOficioEmpleado();
                 foto = currentEmpleado[0].getImagenPerfilEmpleadoURL();
 
-                if(foto == null  ){
-                    Toast.makeText(EmployeeProfile.this, "Aún debe cargar su imagen de Perfil", Toast.LENGTH_LONG).show();
+                if(foto == null ){
+                    Toast.makeText(EmployeeProfile.this, "Es indispensable que cambie su foto de perfil para modificar sus datos", Toast.LENGTH_LONG).show();
+                    //btnGuardar.setEnabled(false);
                 }else {
                     foto = currentEmpleado[0].getImagenPerfilEmpleadoURL();
                 }
@@ -146,12 +147,14 @@ public class EmployeeProfile extends AppCompatActivity {
                 etciudadEmpleado.setText(ciudad);
                 etDireccionEmpleado.setText(direccion);
                 etOficioEmpleado.setText(oficio);
-               /* if(foto == null){
-                    Toast.makeText(EmployeeProfile.this, "Aún debe cargar su imagen de Perfil", Toast.LENGTH_LONG).show();
+                if(foto == null){
+                    Toast.makeText(EmployeeProfile.this, "Es indispensable que cambie su foto de perfil para modificar sus datos", Toast.LENGTH_LONG).show();
+                    btnGuardar.setEnabled(false);
                 }else{
                     Picasso.get().load(foto).into(cvPerfilEmpleado);
+                    //btnGuardar.setEnabled(true);
                 }
-                    */
+
                
 
 
@@ -237,7 +240,7 @@ public class EmployeeProfile extends AppCompatActivity {
 
 
                             url = String.valueOf(uri);
-                            //btnGuardar.setEnabled(true);
+                            btnGuardar.setEnabled(true);
 
                         }
                     });
