@@ -17,6 +17,7 @@ import com.example.pickatoast.pickatoast.Fragments.LeftMainMenu;
 import com.example.pickatoast.pickatoast.Fragments.TopMainMenu;
 import com.example.pickatoast.pickatoast.Interfaces.TopMainMenuImpl;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.example.pickatoast.pickatoast.Services.MenuButtonsHandler;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,12 +49,7 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_events_list );
 
-        Bundle bun = getIntent().getExtras();
-        if (bun == null) {
-            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        }else{
-            clave = bun.getString("clave");
-        }
+
 
         btnCrearEvento = (Button) findViewById(R.id.btnCrearEvento);
 
@@ -129,5 +125,11 @@ public class EventsList extends AppCompatActivity implements TopMainMenuImpl {
         else if(fragmentName.equals(topFragmentName)){
             buttonsHandler.onTopMenuButtonClicked(buttonClicked,leftMenu,topFragmentName);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 }

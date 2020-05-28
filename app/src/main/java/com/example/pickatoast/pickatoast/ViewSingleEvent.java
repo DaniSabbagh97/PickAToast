@@ -213,5 +213,9 @@ public class ViewSingleEvent extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ChangeWindowService.jumpTo(this,EventsList.class);
+    }
 }

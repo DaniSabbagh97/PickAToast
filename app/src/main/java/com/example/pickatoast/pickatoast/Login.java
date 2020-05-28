@@ -81,12 +81,8 @@ public class Login extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     user = mAuth.getCurrentUser();
-                    String clave = user.getUid();
-                    Intent intent2=new Intent(Login.this, EventsList.class);
-                    intent2.putExtra("clave", clave);
-                    intent2.putExtra("correo", correo);
-                    intent2.putExtra("password", password);
-                    startActivity(intent2);
+
+                    ChangeWindowService.jumpTo(Login.this,EventsList.class);
                     Toast.makeText(Login.this,"Iniciando Sesión. . .", Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(Login.this,"Usuario y/o Contraseña Incorrectos. . .", Toast.LENGTH_LONG).show();

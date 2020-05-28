@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pickatoast.pickatoast.Pojos.Empleado;
+import com.example.pickatoast.pickatoast.Services.ChangeWindowService;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -102,5 +103,10 @@ public class ChangePasswordEmpleado extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ChangeWindowService.jumpTo(this,EmployeeProfile.class);
     }
 }

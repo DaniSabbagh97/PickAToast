@@ -264,4 +264,9 @@ public class EmployeeProfile extends AppCompatActivity {
 
         }*/
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ChangeWindowService.jumpTo(this,EventsList.class);
+    }
 }
