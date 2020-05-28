@@ -83,7 +83,7 @@ public class ChangePasswordEmpleado extends AppCompatActivity {
                                     }
                                 });
                             }else{
-                                Toast.makeText(ChangePasswordEmpleado.this,"Mal wey",Toast.LENGTH_LONG).show();
+                                //Toast.makeText(ChangePasswordEmpleado.this,"Mal wey",Toast.LENGTH_LONG).show();
                             }
 
                         }

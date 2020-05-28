@@ -105,9 +105,9 @@ public class RegristroEmpleado extends AppCompatActivity {
 
                                                     startActivity(intent2);
                                                     finish();
-                                                    Toast.makeText(RegristroEmpleado.this,"Todo good", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(RegristroEmpleado.this,"Conexion establecida", Toast.LENGTH_LONG).show();
                                                 }else{
-                                                    Toast.makeText(RegristroEmpleado.this,"Fallo wey", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(RegristroEmpleado.this,"Algo falló", Toast.LENGTH_LONG).show();
                                                 }
                                             }
                                         });

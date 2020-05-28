@@ -147,7 +147,7 @@ public class EmployeeProfile extends AppCompatActivity {
                 etciudadEmpleado.setText(ciudad);
                 etDireccionEmpleado.setText(direccion);
                 etOficioEmpleado.setText(oficio);
-                if(foto == null){
+                if(foto == null || foto.equals("")){
                     Toast.makeText(EmployeeProfile.this, "Es indispensable que cambie su foto de perfil para modificar sus datos", Toast.LENGTH_LONG).show();
                     btnGuardar.setEnabled(false);
                 }else{
