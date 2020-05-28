@@ -146,12 +146,12 @@ public class EmployeeProfile extends AppCompatActivity {
                 etciudadEmpleado.setText(ciudad);
                 etDireccionEmpleado.setText(direccion);
                 etOficioEmpleado.setText(oficio);
-               /* if(foto == null){
+                if(foto == null){
                     Toast.makeText(EmployeeProfile.this, "Aún debe cargar su imagen de Perfil", Toast.LENGTH_LONG).show();
                 }else{
                     Picasso.get().load(foto).into(cvPerfilEmpleado);
                 }
-                    */
+
                
 
 
