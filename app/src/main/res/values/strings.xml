@@ -24,6 +24,10 @@
 
     <!-- Subrayados-->
     <string name="registrate"><u>¿No tienes cuenta? ¡Regístrate!</u></string>
+    <string name="tvnombre"><u>Nombre______________ </u></string>
+    <string name="tvmunicipio"><u>Municipio____________ </u></string>
+    <string name="tvdirecc"><u>Dirección_____________ </u></string>
+    <string name="tvofic"><u>Oficio_________________ </u></string>
     <string name="tvduracion"><u>Duración______________ </u></string>
     <string name="tvlocalizacion"><u>Localización____________ </u></string>
     <string name="tvrestaurante"><u>Local___________________ </u></string>

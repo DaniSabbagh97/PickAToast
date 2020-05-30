@@ -38,11 +38,12 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/topMainMenuProfileButton"
                 android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/round_button_profile"
                 android:contentDescription="@string/topMainMenuProfileButtonDesc"
                 android:padding="5dp"
-                android:src="@drawable/profile_girl" />
+                android:src="@drawable/brown_user" />
 
         </LinearLayout>
 

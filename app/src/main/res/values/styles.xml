@@ -89,11 +89,11 @@
 
     <style name="profile_et">
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/color_font</item>
         <item name="android:layout_height">45dp</item>
-        <item name="android:layout_alignParentEnd">true</item>
-        <item name="android:layout_alignParentBottom">true</item>
         <item name="android:ems">10</item>
         <item name="android:background">@drawable/texto_redondo</item>
+        <item name="android:textColorHint">@color/color_font</item>
         <item name="android:alpha">0.5</item>
         <item name="android:textAlignment">center</item>
     </style>
