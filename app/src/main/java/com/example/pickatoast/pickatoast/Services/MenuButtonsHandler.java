@@ -8,6 +8,7 @@ import com.example.pickatoast.pickatoast.ChangePasswordEmpleado;
 
 import com.example.pickatoast.pickatoast.EmployeeProfile;
 import com.example.pickatoast.pickatoast.EventsList;
+import com.example.pickatoast.pickatoast.Login;
 import com.example.pickatoast.pickatoast.Pojos.OfertaEmpleador;
 import com.example.pickatoast.pickatoast.R;
 import com.example.pickatoast.pickatoast.info;
@@ -30,11 +31,11 @@ public class MenuButtonsHandler {
                  break;
              //BOTON PERFIL
              case 1:
-
                  ChangeWindowService.jumpTo(context, EmployeeProfile.class);
                  break;
              //BOTON AJUSTES
              case 2:
+                 //TODO AJUSTES
                  break;
              //BOTON InFO
              case 3:
@@ -42,6 +43,9 @@ public class MenuButtonsHandler {
                  break;
              //BOTON CERRAR SESION
              case 4:
+                 FirebaseAuth.getInstance().signOut();
+                 ChangeWindowService.jumpTo(context, Login.class);
+
                  break;
          }
      }
